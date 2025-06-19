@@ -1,0 +1,24 @@
+
+
+html {
+  width: 500px;
+  /* max: 800px */
+  height: 550px;
+  /* max: 600px */
+  border: 2px solid #ECCEA7ff;
+  background-color: #ECCEA7ff;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  color: #723C21ff;
+  font-size: 40px
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: #906C4Eff;
+    font-size: 24px
+}
