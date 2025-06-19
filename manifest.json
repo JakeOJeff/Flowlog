@@ -1,0 +1,17 @@
+{
+
+    "manifest_version": 3,
+    "name": "Moodrift",
+    "version": "1.0",
+    "description": "An Optimized Mood Tracker",
+    "permissions": [
+        "contextMenus", "storage", "tabs", "scripting"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "icon.png"
+    }
+}
