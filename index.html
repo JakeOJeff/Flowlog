@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <!-- <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="This is a sample web page with a header, footer, and a main content area.">
+    <meta name="keywords" content="HTML, CSS, JavaScript, sample web page"> -->
+    <!-- <meta name="author" content="Your Name"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+    <div id="header-sync"></div>
+
+    <main>
+        <section id="home">
+            <h2>Home Section</h2>
+            <p>This is the home section of the web page.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Section</h2>
+            <p>This section contains information about the web page.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Section</h2>
+            <p>You can contact us through this section.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div id="footer-sync"></div>
+    </footer>
+
+    <script>
+        $('#header-sync').load('elements/header.html');
+        $('#footer-sync').load('elements/footer.html');
+    </script>
+</body>
+</html>
