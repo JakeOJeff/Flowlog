@@ -19,11 +19,11 @@
 --raw-umber: hsla(27, 30%, 44%, 1);
 
 /* SCSS HEX */
-$navajo-white: #FEE2BCff;
-$fawn: #E3A66Bff;
-$sunset: #ECCEA7ff;
-$kobicha: #723C21ff;
-$raw-umber: #906C4Eff;
+$navajo-white:#fee2bc;
+$fawn:#e3a66b;
+$sunset:#eccea7;
+$kobicha:#723c21;
+$raw-umber:#906c4e;
 
 /* SCSS HSL */
 $navajo-white: hsla(35, 97%, 87%, 1);
