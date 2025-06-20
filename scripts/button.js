@@ -3,26 +3,31 @@ let mus2 = "/assets/imgs/music2.png";
 let username = "";
 
 document.addEventListener("DOMContentLoaded", () => {
-
-
-
-  const musicButton = document.getElementById("musicButton");
-  const audio = document.getElementById("audio");
   const startButton = document.getElementById("startButton");
 
 
+  const musicButton = document.getElementById("musicButton");
+
+  let isPlaying = false;
+
+  chrome.runtime.sendMessage({ type: "get-music-state" }, (response) => {
+    isPlaying = response.playing;
+    musicButton.src = isPlaying ? mus1 : mus2;
+  });
   if (musicButton && audio) {
     musicButton.addEventListener("click", () => {
-      if (audio.paused) {
-        audio.play();
+      if (isPlaying) {
         musicButton.src = mus1;
+        isPlaying = false;
           chrome.runtime.sendMessage({ type: "play-audio" });
       } else {
-        audio.pause();
         musicButton.src = mus2;
+        isPlaying = true;
+          chrome.runtime.sendMessage({ type: "stop-audio" });
       }
     });
   }
+  isPlaying = !isPlaying;
 
   const signupSubtext = document.getElementById("signupSubtext");
   if (signupSubtext) {
