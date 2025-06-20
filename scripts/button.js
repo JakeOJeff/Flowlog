@@ -1,5 +1,5 @@
-let mus1 = "assets/music.png";
-let mus2 = "assets/music2.png";
+let mus1 = "assets/imgs/music.png";
+let mus2 = "assets/imgs/music2.png";
 
 document.addEventListener("DOMContentLoaded", () => {
   const musicButton = document.getElementById("musicButton");

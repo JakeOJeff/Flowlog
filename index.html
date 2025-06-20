@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head> 
+
+<head>
     <title>Flowlog</title>
     <meta charset="UTF-8">
-    <link href="style.css" rel="stylesheet">
-    <link href="button.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="styles/button.css" rel="stylesheet">
+    <link href="styles/container.css" rel="stylesheet">
+    <link href="styles/input.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-<h1>FLOWLOG</h1>
-<h2>We are always here for you &lt3</h2>
+
+    <div class="signup">
+        <h1>Welcome to Flowlog</h1>
+        <h3>What can we call you?</h3>
+        <input type="text" class="textInput" id="nickname" placeholder="Enter your name" required>
+        <button id="startButton" class="mainButton">Start</button>
 
 
-<img id="musicButton" src="assets/music.png" alt="Music" class="imageICO" style="cursor: pointer;">
+    </div>
+
+    <img id="musicButton" src="assets/imgs/music.png" alt="Music" class="imageICO musicButton" style="cursor: pointer;">
 
 
 </body>
-<script src ="button.js"></script>
+<script src="scripts/button.js"></script>
 
 </html>

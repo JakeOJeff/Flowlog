@@ -1,0 +1,31 @@
+.imageICO {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    background-size: cover;
+    display: inline-block;
+}
+.musicButton {
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+}
+
+.mainButton {
+    margin: 5px;
+    width: 30%;
+    height: 5%;
+    background-size: cover;
+    display: inline-block;
+    background-color: #906C4Eff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+      transition-duration: 0.4s;
+}
+
+.mainButton:hover {
+    background-color: #92765e;
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
