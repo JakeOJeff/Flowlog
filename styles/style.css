@@ -1,14 +1,14 @@
 
 
-html {
+html, body {
   width: 500px;
-  /* max: 800px */
   height: 550px;
-  /* max: 600px */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* <-- prevents scrollbars */
   border: 2px solid #ECCEA7ff;
   background-color: #ECCEA7ff;
 }
-
 h1 {
   text-align: center;
   font-family: 'Courier New', Courier, monospace;

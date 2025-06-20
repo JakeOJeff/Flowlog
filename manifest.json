@@ -1,17 +1,30 @@
 {
-
     "manifest_version": 3,
     "name": "Flowlog",
     "version": "1.0",
     "description": "An Optimized Mood Tracker",
     "permissions": [
-        "contextMenus", "storage", "tabs", "scripting"
+        "contextMenus",
+        "storage",
+        "tabs",
+        "scripting",
+        "offscreen"
     ],
     "background": {
-        "service_worker": "scripts/background.js"
+        "service_worker": "background.js"
     },
     "action": {
         "default_popup": "index.html",
         "default_icon": "icon.png"
-    }
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "/assets/music/peace.mp3"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
 }
