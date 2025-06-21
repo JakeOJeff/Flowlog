@@ -1,20 +1,20 @@
 let mus1 = "/assets/imgs/music.png";
 let mus2 = "/assets/imgs/music2.png";
 let username = "";
+let welcomePromptLoaded = false;
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const signupSubtext = document.getElementById("signupSubtext");
-  if (signupSubtext) {
+  const welcomePrompt = document.getElementById("welcomePrompt");
+  if (welcomePrompt && !welcomePromptLoaded) {
     chrome.storage.local.get("savedName", (data) => {
       if (data.savedName) {
         username = data.savedName;
-        document.getElementById("signup").style.visibility = "hidden";    
-        window.location.href = "/welcome/index.html";
-        const welcomePrompt = document.getElementById("welcomePrompt");
         if (welcomePrompt) {
           welcomePrompt.textContent = "What are you upto today " + username + "!";
+          welcomePromptLoaded = true;
         }
+         window.location.href = "/pages/welcome/index.html";
       }
     });
   }
@@ -25,18 +25,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let isPlaying = false;
 
-chrome.runtime.sendMessage({ type: "get-music-state" }, (response) => {
-  if (response && typeof response.playing !== "undefined") {
-    isPlaying = response.playing;
-    musicButton.src = isPlaying ? mus1 : mus2;
-  } else {
-    console.warn("No response or missing 'playing' from background script.");
-    isPlaying = false;
-    musicButton.src = mus2; // default to not playing
-  }
-});
+  chrome.runtime.sendMessage({ type: "get-music-state" }, (response) => {
+    if (response && typeof response.playing !== "undefined") {
+      isPlaying = response.playing;
+      musicButton.src = isPlaying ? mus1 : mus2;
+    } else {
+      console.warn("No response or missing 'playing' from background script.");
+      isPlaying = false;
+      musicButton.src = mus2; // default to not playing
+    }
+  });
 
-  if (musicButton && audio) {
+  if (musicButton) {
     musicButton.addEventListener("click", () => {
       if (isPlaying) {
         musicButton.src = mus1;
@@ -49,9 +49,9 @@ chrome.runtime.sendMessage({ type: "get-music-state" }, (response) => {
       }
     });
   }
-  isPlaying = !isPlaying;
+  //isPlaying = !isPlaying;
 
-  
+
   //   chrome.storage.local.remove("savedName", () => {
   //   console.log("Name cleared!");
   // });
@@ -64,7 +64,7 @@ chrome.runtime.sendMessage({ type: "get-music-state" }, (response) => {
       chrome.storage.local.set({ savedName: name }, () => {
         if (name !== "") {
           document.getElementById("signupSubtext").textContent = "Welcome, " + name + "!";
-          window.location.href = "/welcome/index.html";
+          window.location.href = "/pages/welcome/index.html";
         }
       });
     });
