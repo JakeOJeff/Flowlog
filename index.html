@@ -1,17 +1,10 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <script>
-    chrome.storage.local.get("savedName", (data) => {
-      if (data.savedName) {
-        location.replace("/pages/welcome/index.html");
-      } else {
-        location.replace("/pages/new/index.html");
-      }
-    });
-  </script>
+  <link href="/styles/style.css" rel="stylesheet">
+  <title>Flowlog</title>
 </head>
-<body></body>
+<body><div></div></body>
+<script src="/scripts/router.js"></script>
 </html>
