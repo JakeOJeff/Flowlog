@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const musicButton = document.getElementById("musicButton");
   const nicknameInput = document.getElementById("nickname");
   const signupSubtext = document.getElementById("signupSubtext");
+  const startFlowingButton = document.getElementById("startFlowingButton");
 
   let isPlaying = false;
 
@@ -23,9 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  //     chrome.storage.local.remove("savedName", () => {
-  //   console.log("Name cleared!");
-  // });
+      chrome.storage.local.remove("savedName", () => {
+    console.log("Name cleared!");
+  });
 
   // Load music state and update icon
   if (musicButton) {
@@ -57,9 +58,28 @@ document.addEventListener("DOMContentLoaded", () => {
           if (signupSubtext) {
             signupSubtext.textContent = "Welcome, " + name + "!";
           }
-          window.location.href = "/pages/welcome/index.html";
+          startButton.classList.add("fade-out-up");
+          nicknameInput.classList.add("fade-out-up");
+          signupSubtext.classList.add("fade-out-up");
+        setTimeout(() => {
+        window.location.href = "/pages/welcome/index.html";
+      }, 600); // Matches the duration in CSS
         });
       }
     });
   }
+
+  if (startFlowingButton) {
+    startFlowingButton.addEventListener("click", () => {
+        startFlowingButton.classList.add("fade-out-up");
+        welcomePrompt.classList.add("fade-out-up");
+        musicButton.classList.add("fade-out-up");
+              // Wait for animation to finish before redirecting
+      setTimeout(() => {
+        window.location.href = "/pages/main/index.html";
+      }, 600); // Matches the duration in CSS
+    });
+  }
+
+  
 });
