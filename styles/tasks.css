@@ -1,0 +1,29 @@
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin: 5px 0;
+    padding: 8px 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+  }
+
+  li:hover {
+    background-color: #ddd;
+  }
+
+  .crossed {
+    text-decoration: line-through;
+    color: #999;
+    background-color: #d1ffd1;
+  }
+
+  .selected {
+    background-color: #e0e0ff;
+  }

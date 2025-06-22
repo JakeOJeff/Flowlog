@@ -17,24 +17,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function toggleTask(index) {
-    chrome.storage.local.get("tasks", (data) => {
-      const tasks = data.tasks || [];
-      tasks[index].done = !tasks[index].done;
+function toggleTask(index) {
+  chrome.storage.local.get("tasks", (data) => {
+    const tasks = data.tasks || [];
+    tasks[index].done = !tasks[index].done;
+    console.log(`Toggled task ${index}: now done = ${tasks[index].done}`); // ✅ DEBUG
 
-      // Track completion by day
-      if (tasks[index].done) {
-        const today = new Date().toISOString().split("T")[0];
-        chrome.storage.local.get("stats", (res) => {
-          const stats = res.stats || {};
-          stats[today] = (stats[today] || 0) + 1;
-          chrome.storage.local.set({ stats });
-        });
-      }
+    if (tasks[index].done) {
+      const today = new Date().toISOString().split("T")[0];
+      chrome.storage.local.get("stats", (res) => {
+        const stats = res.stats || {};
+        stats[today] = (stats[today] || 0) + 1;
+        chrome.storage.local.set({ stats });
+      });
+    }
 
-      chrome.storage.local.set({ tasks }, loadTasks);
-    });
-  }
+    chrome.storage.local.set({ tasks }, loadTasks);
+  });
+}
+
 
 
   addTaskBtn.addEventListener("click", () => {

@@ -1,0 +1,16 @@
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(7, 14px);
+    gap: 4px;
+  }
+
+  .box {
+    width: 14px;
+    height: 14px;
+    background-color: #eee;
+  }
+
+  .level-1 { background-color: #c6e48b; }
+  .level-2 { background-color: #7bc96f; }
+  .level-3 { background-color: #239a3b; }
+  .level-4 { background-color: #196127; }
