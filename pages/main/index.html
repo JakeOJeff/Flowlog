@@ -8,6 +8,35 @@
     <link href="/styles/tab.css" rel="stylesheet">
     <link href="/styles/button.css" rel="stylesheet">
     <title>Flowlog</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(7, 14px);
+            gap: 4px;
+        }
+
+        .box {
+            width: 14px;
+            height: 14px;
+            background-color: #eee;
+        }
+
+        .box.level-1 {
+            background-color: #c6e48b;
+        }
+
+        .box.level-2 {
+            background-color: #7bc96f;
+        }
+
+        .box.level-3 {
+            background-color: #239a3b;
+        }
+
+        .box.level-4 {
+            background-color: #196127;
+        }
+    </style>
 </head>
 
 <body>
@@ -22,15 +51,10 @@
         <!-- Tab content -->
         <div id="Flow" class="tabcontent">
             <div class="main">
-                <h3 id="welcomeMessage">Good evening, Jake 👋</h3>
-                <p>Let’s flow through your day mindfully.</p>
+                <h2 id="welcomeMessage">Good evening, Jake 👋</h3>
+                    <p>Let’s flow through your day mindfully.</p>
 
-                <div class="aiAssistant">
-                    <h3>💬 Ask Flow Assistant</h3>
-                    <textarea id="geminiPrompt" placeholder="How can I focus better today?" rows="2"></textarea>
-                    <button id="askGeminiBtn">Ask Gemini</button>
-                    <div id="geminiResponse"></div>
-                </div>
+
 
             </div>
         </div>
@@ -45,26 +69,29 @@
         <div id="Log" class="tabcontent">
             <div class="main">
                 <h2>Log</h2>
-                <p>Tokyo is the capital of Japan.</p>
+                <input id="taskInput" type="text" placeholder="New task" />
+                <button id="addTaskBtn">Add</button>
+                <ul id="taskList"></ul>
             </div>
-        </div>
 
-        <div id="Profile" class="tabcontent">
-            <div class="main">
-                <h2>Profile</h2>
-                <p>Tokyo is the capital of Japan.</p>
+            <div id="Profile" class="tabcontent">
+                <div class="main">
+                    <h2>Profile</h2>
+                    <div class="grid" id="grid"></div>
+
+                </div>
             </div>
-        </div>
 
+
+
+        </div>
         <img id="musicButton" src="/assets/imgs/music.png" alt="Music" class="imageICO musicButton"
             style="cursor: pointer;">
-
-    </div>
-
 </body>
 <script src="/scripts/tab.js"></script>
 <script src="/scripts/main.js"></script>
-<script src="/scripts/gemini.js"></script>
+<script src="/scripts/tasks.js"></script>
+<script src="/scripts/stats.js"></script>
 
 
 </html>
