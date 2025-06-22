@@ -36,4 +36,5 @@
 /* Style the tab content */
 .tabContent {
     display: none;
+    width: 100%;
 }
