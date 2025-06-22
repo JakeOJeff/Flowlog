@@ -11,7 +11,7 @@
         "offscreen"
     ],
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "/background.js"
     },
     "action": {
         "default_popup": "index.html",
@@ -26,5 +26,8 @@
                 "<all_urls>"
             ]
         }
-    ]
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    }
 }

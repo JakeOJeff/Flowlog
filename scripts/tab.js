@@ -18,7 +18,7 @@ function openTab(evt, tabName) {
 
 
     // Show the current tab, and add "active" class to the button that opened the tab
-    document.getElementById(tabName).style.display = "flex"; // Starting with Capitals
+    document.getElementById(tabName).style.display = "block"; // Starting with Capitals
     evt.currentTarget.className += " active";
 }
 

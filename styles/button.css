@@ -28,4 +28,5 @@
 .mainButton:hover {
     background-color: #92765e;
       box-shadow: 0 5px 4px 0 #906C4Eff, 0 17px 30px 0 #906C4Eff;
-}
+    cursor: pointer;
+    }

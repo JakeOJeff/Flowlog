@@ -6,12 +6,12 @@
     <link href="/styles/style.css" rel="stylesheet">
     <link href="/styles/container.css" rel="stylesheet">
     <link href="/styles/tab.css" rel="stylesheet">
+    <link href="/styles/button.css" rel="stylesheet">
     <title>Flowlog</title>
 </head>
 
 <body>
     <div>
-
         <div class="tab">
             <button class="tablinks" id="flow">Flow</button>
             <button class="tablinks" id="mood">Mood</button>
@@ -22,33 +22,49 @@
         <!-- Tab content -->
         <div id="Flow" class="tabcontent">
             <div class="main">
-                <h3>Flow</h3>
-                <p>London is the capital city of England.</p>
+                <h3 id="welcomeMessage">Good evening, Jake 👋</h3>
+                <p>Let’s flow through your day mindfully.</p>
+
+                <div class="aiAssistant">
+                    <h3>💬 Ask Flow Assistant</h3>
+                    <textarea id="geminiPrompt" placeholder="How can I focus better today?" rows="2"></textarea>
+                    <button id="askGeminiBtn">Ask Gemini</button>
+                    <div id="geminiResponse"></div>
+                </div>
+
             </div>
         </div>
 
         <div id="Mood" class="tabcontent">
             <div class="main">
-                <h3>Mood</h3>
+                <h2>Mood</h2>
                 <p>Paris is the capital of France.</p>
             </div>
         </div>
 
         <div id="Log" class="tabcontent">
             <div class="main">
-                <h3>Log</h3>
+                <h2>Log</h2>
                 <p>Tokyo is the capital of Japan.</p>
             </div>
         </div>
 
         <div id="Profile" class="tabcontent">
             <div class="main">
-                <h3>Profile</h3>
+                <h2>Profile</h2>
                 <p>Tokyo is the capital of Japan.</p>
             </div>
         </div>
+
+        <img id="musicButton" src="/assets/imgs/music.png" alt="Music" class="imageICO musicButton"
+            style="cursor: pointer;">
+
     </div>
+
 </body>
 <script src="/scripts/tab.js"></script>
+<script src="/scripts/main.js"></script>
+<script src="/scripts/gemini.js"></script>
+
 
 </html>
