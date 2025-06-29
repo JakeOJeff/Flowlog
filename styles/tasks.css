@@ -12,6 +12,8 @@
     cursor: pointer;
     user-select: none;
     transition: background-color 0.2s ease;
+     font-family: 'Quicksand', sans-serif;
+    font-weight: 700; /* Try 600, 700, or 800 for bolder looks */
   }
 
   li:hover {

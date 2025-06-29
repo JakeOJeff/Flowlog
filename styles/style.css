@@ -6,29 +6,29 @@ html, body {
   margin: 0;
   padding: 0;
   overflow: hidden; /* <-- prevents scrollbars */
-  border: 2px solid #ECCEA7ff;
-  background-color: #ECCEA7ff;
+  border: 2px solid #f2dddd;
+  background-color: #f2dddd;
 }
 h1 {
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
-  color: #723C21ff;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700; /* Try 600, 700, or 800 for bolder looks */  color: #84433d;
   font-size: 40px;
   margin:0
 }
 
 h2 {
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    color: #906C4Eff;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700; /* Try 600, 700, or 800 for bolder looks */    color: #aa5750;
     font-size: 24px;
     margin:0
 }
 
 h3 {
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    color: #906C4Eff;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700; /* Try 600, 700, or 800 for bolder looks */    color: #ab5a53;
     font-size: 16px;
       margin:2px
 }

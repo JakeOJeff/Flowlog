@@ -1,3 +1,26 @@
+// Soft Background
+$soft-background: #f2dddd;
+
+// Light Accent (hover states, subtle backgrounds)
+$light-accent: #e5a9a9;
+lightAccentBorder = {0.949, 0.796, 0.796},  -- approx #f2cbcb
+
+// Button or Primary Accent Color
+$button-color: #c67a76;
+
+//Button hover
+#d88f8b
+
+// Heading / Emphasis Text
+$heading-color: #aa5750;
+
+// Primary Text / Borders / Footer
+$text-color: #753a33;
+
+
+
+
+
 #da969b	(218,150,155)
 #ca7f68	(202,127,104)
 #ffb3b3	(255,179,179)

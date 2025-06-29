@@ -4,24 +4,24 @@
   border: 0px solid #ccc;
   border-radius: 6px;
   box-sizing: border-box;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700; /* Try 600, 700, or 800 for bolder looks */  font-size: 16px;
   color: #fff;
-  background-color: #E3A66Bff;
+  background-color: #e5a9a9;
     transition-duration: 0.4s
 }
 
 .textInput:hover {
-    background-color: rgb(227, 174, 120);
+    background-color: #efbaba;
 }
 
 .textInput:focus {
-    background-color: rgb(227, 174, 120);
+    background-color: #efbaba;
     border: 0px solid #ccc;
     outline: none;
 }
 .textInput:active {
-    background-color: rgb(227, 174, 120);
+    background-color: #efbaba;
     border: 0px solid #ccc;
 }
 

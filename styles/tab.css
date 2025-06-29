@@ -13,26 +13,26 @@
     height: 100%;
     background-size: cover;
     display: inline-block;
-    background-color: #906C4Eff;
+    background-color: #c67a76;
     color: #fff;
     border: none;
     border-radius: 10px;
-    font-family: 'Courier New', Courier, monospace;
-    transition-duration: 0.4s;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700; /* Try 600, 700, or 800 for bolder looks */    transition-duration: 0.4s;
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-    background-color: #92765e;
-    box-shadow: 0 3px 2px 0 #906C4Eff, 0 8px 15px 0 #906C4Eff;
+    background-color: #d88f8b;
+    box-shadow: 0 3px 2px 0 #d88f8b, 0 8px 15px 0 #d88f8b;
         cursor: pointer;
     transition-duration: 0.4s;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-    background-color: #8d6647;
-    box-shadow: 0 1px 1px 0 #8d6647, 0 4px 7px 0 #8d6647;
+    background-color: #d88f8b;
+    box-shadow: 0 1px 1px 0 #d88f8b, 0 4px 7px 0 #d88f8b;
 }
 
 /* Style the tab content */

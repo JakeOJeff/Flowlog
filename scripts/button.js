@@ -22,9 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  //     chrome.storage.local.remove("savedName", () => {
-  //   console.log("Name cleared!");
-  // });
+  chrome.storage.local.remove("savedName", () => {
+    console.log("Name cleared!");
+  });
 
   
 
