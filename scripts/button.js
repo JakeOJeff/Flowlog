@@ -22,12 +22,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  chrome.storage.local.remove("savedName", () => {
-    console.log("Name cleared!");
-  });
+  // chrome.storage.local.remove("savedName", () => {
+  //   console.log("Name cleared!");
+  // });
 
-  
-
+  //  chrome.storage.local.remove("stats", () => {
+  //   console.log("Stats cleared!");
+  // });
+  //  chrome.storage.local.remove("tasks", () => {
+  //   console.log("Tasks cleared!");
+  // });
   if (startButton && nicknameInput) {
     startButton.addEventListener("click", () => {
       const inputName = nicknameInput.value.trim();

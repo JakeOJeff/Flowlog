@@ -30,6 +30,8 @@ function toggleTask(index) {
         stats[today] = (stats[today] || 0) + 1;
         chrome.storage.local.set({ stats });
       });
+      setTimeout('', 5000);
+      tasks[index].done = false;
     }
 
     chrome.storage.local.set({ tasks }, loadTasks);

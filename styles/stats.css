@@ -1,16 +1,20 @@
   .grid {
     display: grid;
-    grid-template-columns: repeat(7, 14px);
+    grid-template-columns: repeat(13, 14px);
     gap: 4px;
+
   }
 
   .box {
     width: 14px;
     height: 14px;
-    background-color: #eee;
+        border-radius: 4px;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
   }
 
-  .level-1 { background-color: #c6e48b; }
-  .level-2 { background-color: #7bc96f; }
-  .level-3 { background-color: #239a3b; }
-  .level-4 { background-color: #196127; }
+  .level-1 { background-color: #f7e0df; }
+  .level-2 { background-color: #f8cfcd; }
+  .level-3 { background-color: #f6bdba; }
+  .level-4 { background-color: #f3a4a0; }
+  .level-5 { background-color: #f18883;}
