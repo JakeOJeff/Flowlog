@@ -6,6 +6,7 @@
     <link href="/styles/style.css" rel="stylesheet">
     <link href="/styles/container.css" rel="stylesheet">
     <link href="/styles/tab.css" rel="stylesheet">
+        <link href="/styles/input.css" rel="stylesheet">
     <link href="/styles/button.css" rel="stylesheet">
     <link href="/styles/tasks.css" rel="stylesheet">
     <link href="/styles/stats.css" rel="stylesheet">
@@ -38,15 +39,15 @@
         <div id="Mood" class="tabcontent">
             <div class="main">
                 <h2>Mood</h2>
-                <p>Paris is the capital of France.</p>
+                <p>Mood Table Coming Soon!</p>
             </div>
         </div>
 
         <div id="Log" class="tabcontent">
             <div class="main">
-                <h2>Log</h2>
-                <input id="taskInput" type="text" placeholder="New task" />
-                <button id="addTaskBtn">Add</button>
+                <h2>Log</h2> 
+                <input type="text" class="textInput" id="taskInput" placeholder="Enter Task" required>
+                <button class="mainButton" id="addTaskBtn">Add</button>
                 <ul id="taskList"></ul>
             </div>
         </div>
