@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const stats = data.stats || {};
     const today = new Date();
 
-    for (let i = 0; i < 265; i++) {
+    for (let i = 0; i < (29 * 7); i++) {
       const date = new Date(today);
       date.setDate(today.getDate() - i);
       const key = date.toISOString().split("T")[0];
