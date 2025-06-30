@@ -1,9 +1,9 @@
 function getLevel(count) {
-  if (count >= 20) return "level-4";
   if (count >= 15) return "level-4";
   if (count >= 10) return "level-3";
   if (count >= 5) return "level-2";
   if (count >= 1) return "level-1";
+  if (count === 0) return "level-0";
   return "";
 }
 
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const stats = data.stats || {};
     const today = new Date();
 
-    for (let i = 0; i < 265; i++) {
+    for (let i = 0; i < (29 * 7); i++) {
       const date = new Date(today);
       date.setDate(today.getDate() - i);
       const key = date.toISOString().split("T")[0];

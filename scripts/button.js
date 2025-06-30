@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const nicknameInput = document.getElementById("nickname");
   const signupSubtext = document.getElementById("signupSubtext");
   const startFlowingButton = document.getElementById("startFlowingButton");
+  
+  
+  
 
 
   // Set welcome prompt if available
@@ -20,8 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
         welcomePromptLoaded = true;
       }
     });
+    
   }
-
+  
   // chrome.storage.local.remove("savedName", () => {
   //   console.log("Name cleared!");
   // });
