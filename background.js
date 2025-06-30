@@ -14,10 +14,4 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     sendResponse({ playing: isPlaying });
   }
 
-  if (request.type === "askGemini") {
-    fetchGeminiResponse(request.prompt).then((reply) => {
-      sendResponse({ reply });
-    });
-    return true;
-  }
 });
