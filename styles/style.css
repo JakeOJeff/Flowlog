@@ -21,7 +21,7 @@ h2 {
     text-align: center;
     font-family: 'Quicksand', sans-serif;
     font-weight: 700; /* Try 600, 700, or 800 for bolder looks */    color: #aa5750;
-    font-size: 24px;
+    font-size: 28px;
     margin:0
 }
 
@@ -29,8 +29,18 @@ h3 {
     text-align: center;
     font-family: 'Quicksand', sans-serif;
     font-weight: 700; /* Try 600, 700, or 800 for bolder looks */    color: #ab5a53;
-    font-size: 16px;
+    font-size: 20px;
       margin:2px
+}
+
+p {
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-weight: 500; /* Try 400, 500, or 600 for different weights */
+  color: #84433d;
+  font-size: 14px;
 }
 
 .fade-out-up {

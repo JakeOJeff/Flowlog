@@ -7,6 +7,10 @@ const timeOfDay =
 document.addEventListener("DOMContentLoaded", function () {
   const musicButton = document.getElementById('musicButton');
   const userTaskInfo = document.getElementById('userTaskInfo');
+  const streakElement = document.getElementById('streak');
+  const mostProductiveTaskElement = document.getElementById('mostProductiveTask');
+
+
   let totalTasks = 0;
   let totalDays = 0;
   let buildUserData = '';
@@ -37,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Load user name and tasks, then update DOM
   chrome.storage.local.get(['savedName', 'tasks'], (data) => {
     const name = data.savedName || 'User';
-    buildUserData = '--: ' + name;
+    buildUserData = name;
 
     const current_hour = new Date().getHours(); // You had `date.getHours()` but `date` wasn't defined
     const timeOfDay = ["Night", "Morning", "Afternoon", "Evening"]; // Assuming this array exists
@@ -65,7 +69,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    buildUserData += ` : ${totalTasks} tasks done (${totalDays} days) :-`;
+    buildUserData += ` : ${totalTasks} tasks done (${totalDays} days)`;
+
+
+    if (streakElement) {
+      streakElement.textContent = `Streak: ${streak} days`;
+    }
+    if (mostProductiveTaskElement) {
+      mostProductiveTaskElement.textContent = `Most Productive Task: ${mostProductiveTaskName} (${mostProductiveTaskCount} times)`;
+    }
 
     if (userTaskInfo) {
       userTaskInfo.textContent = buildUserData;

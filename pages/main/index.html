@@ -6,7 +6,7 @@
     <link href="/styles/style.css" rel="stylesheet">
     <link href="/styles/container.css" rel="stylesheet">
     <link href="/styles/tab.css" rel="stylesheet">
-        <link href="/styles/input.css" rel="stylesheet">
+    <link href="/styles/input.css" rel="stylesheet">
     <link href="/styles/button.css" rel="stylesheet">
     <link href="/styles/tasks.css" rel="stylesheet">
     <link href="/styles/stats.css" rel="stylesheet">
@@ -30,6 +30,14 @@
             <div class="main">
                 <h2 id="welcomeMessage">Good evening, Jake 👋</h3>
                     <p>Let’s flow through your day mindfully.</p>
+                    <div class="timer-box" style="border: 1px solid #404040; border-radius: 10px; padding: 24px; max-width: 300px; margin: 24px 0; background: #2a2a2a; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <div id="timerDisplay" style="font-size: 2em; text-align: center;">00:00:00</div>
+                        <div class="buttons" style="display: flex; justify-content: center; gap: 16px; margin-top: 16px;">
+                            <img src="/assets/imgs/play.png" id="startBtn" class="imageICO" alt="Start" style="cursor:pointer;">
+                            <img src="/assets/imgs/pause.png" id="stopBtn" class="imageICO" alt="Stop" style="display:none; cursor:pointer;">
+                            <img src="/assets/imgs/stop.png" id="resetBtn" class="imageICO" alt="Reset" style="display:none; cursor:pointer;">
+                        </div>
+                    </div>
 
 
 
@@ -60,9 +68,7 @@
                 <div class="grid" id="grid"></div>
                 <h3>-: Streaks and Achievements :-</h3>
                 <p id="streak">10 Day</p>
-                <p id="mostProductiveTask"> You did this task the most</p>
-                <p id="mostProductiveTaskName">You did this Reading the most </p>
-                <p id="mostProductiveTaskCount">10 times</p>
+                <p id="mostProductiveTask">You did this Reading the most </p>
 
             </div>
         </div>
@@ -73,6 +79,7 @@
 <script src="/scripts/main.js"></script>
 <script src="/scripts/tasks.js"></script>
 <script src="/scripts/stats.js"></script>
+<script src="/scripts/stopwatch.js"></script>
 
 
 
