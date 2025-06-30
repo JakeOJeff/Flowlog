@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
         li.className = `${getLevel(task.count || 0)}`;
         li.addEventListener("click", () => addTaskCount(index));
 
+        const buttonsDiv = document.createElement("div");
+        buttonsDiv.className = "log-buttons-container";
         const removeBtn = document.createElement("button");
         removeBtn.textContent = "X"; // Cross symbol
         removeBtn.className = "remove-btn";
@@ -26,9 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
         repeatBtn.addEventListener("click", () => {
           toggleRepeat(index);   // Call your repeat function
         });
+        buttonsDiv.appendChild(repeatBtn);
+        buttonsDiv.appendChild(removeBtn);
+        taskList.appendChild(buttonsDiv);
         taskList.appendChild(li);
-        taskList.appendChild(repeatBtn);
-        taskList.appendChild(removeBtn);
 
       });
     });
@@ -86,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     chrome.storage.local.get("tasks", (data) => {
       const tasks = data.tasks || [];
-      tasks.push({ text, selected: false, count: 0, repeat: false });
+      tasks.push({ text, selected: false, count: 1, repeat: false });
       chrome.storage.local.set({ tasks }, () => {
         taskInput.value = "";
         loadTasks();
