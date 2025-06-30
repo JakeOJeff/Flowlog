@@ -10,23 +10,26 @@ document.addEventListener("DOMContentLoaded", () => {
       tasks.forEach((task, index) => {
         const li = document.createElement("li");
         li.textContent = task.text;
-        li.className = `${task.done ? "crossed" : ""} ${task.selected ? "selected" : ""}`.trim();
-        li.addEventListener("click", () => toggleTask(index));
+        li.className = `${getLevel(task.count || 0)}`;
+        li.addEventListener("click", () => addTaskCount(index));
+
         const removeBtn = document.createElement("button");
-        removeBtn.textContent = "×"; // Cross symbol
+        removeBtn.textContent = "X"; // Cross symbol
         removeBtn.className = "remove-btn";
         removeBtn.addEventListener("click", () => {
           removeTask(index);   // Call your remove function
         });
-        li.appendChild(removeBtn);
+
         const repeatBtn = document.createElement("button");
-        repeatBtn.textContent = "↻"; // Repeat symbol
-        repeatBtn.className = "repeat-btn";
+        repeatBtn.textContent = "O"; // Repeat symbol
+        repeatBtn.className = `${task.repeat ? "repeat-btn repeat-btn-enabled" : "repeat-btn"}`;
         repeatBtn.addEventListener("click", () => {
           toggleRepeat(index);   // Call your repeat function
         });
-                li.appendChild(repeatBtn);
         taskList.appendChild(li);
+        taskList.appendChild(repeatBtn);
+        taskList.appendChild(removeBtn);
+
       });
     });
   }
@@ -51,21 +54,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function toggleTask(index) {
+  function addTaskCount(index) {
     chrome.storage.local.get("tasks", (data) => {
       const tasks = data.tasks || [];
-      tasks[index].done = !tasks[index].done;
-      console.log(`Toggled task ${index}: now done = ${tasks[index].done}`); // ✅ DEBUG
+      tasks[index].count = tasks[index].count || 0;
+      tasks[index].count++;
+      console.log(`Added task ${index}: now count = ${tasks[index].count}`); // ✅ DEBUG
 
-      if (tasks[index].done) {
+      if (tasks[index].count >= 1) {
         const today = new Date().toISOString().split("T")[0];
         chrome.storage.local.get("stats", (res) => {
           const stats = res.stats || {};
           stats[today] = (stats[today] || 0) + 1;
           chrome.storage.local.set({ stats });
         });
-        setTimeout('', 5000);
-        tasks[index].done = false;
+        
       }
 
       chrome.storage.local.set({ tasks }, loadTasks);
@@ -83,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     chrome.storage.local.get("tasks", (data) => {
       const tasks = data.tasks || [];
-      tasks.push({ text, done: false, selected: false, count: 0, repeat: false });
+      tasks.push({ text, selected: false, count: 0, repeat: false });
       chrome.storage.local.set({ tasks }, () => {
         taskInput.value = "";
         loadTasks();

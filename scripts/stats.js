@@ -1,4 +1,10 @@
 function getLevel(count) {
+  if (count >= 150) return "level-10";
+  if (count >= 100) return "level-9";
+  if (count >= 75) return "level-8";
+  if (count >= 50) return "level-7";
+  if (count >= 30) return "level-6";
+  if (count >= 25) return "level-5";
   if (count >= 20) return "level-4";
   if (count >= 15) return "level-4";
   if (count >= 10) return "level-3";

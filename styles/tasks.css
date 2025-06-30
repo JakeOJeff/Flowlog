@@ -5,27 +5,64 @@
   }
 
   li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin: 5px 0;
     padding: 8px 10px;
     background-color: #f0f0f0;
     border-radius: 4px;
     cursor: pointer;
     user-select: none;
-    transition: background-color 0.2s ease;
      font-family: 'Quicksand', sans-serif;
     font-weight: 700; /* Try 600, 700, or 800 for bolder looks */
   }
 
-  li:hover {
-    background-color: #ddd;
+
+
+
+  .remove-btn {
+    background-color: #aa5750;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
   }
 
-  .crossed {
-    text-decoration: line-through;
-    color: #999;
-    background-color: #d1ffd1;
+  .remove-btn:hover {
+    background-color: #ac6b66;
+    cursor: pointer;
   }
 
-  .selected {
-    background-color: #e0e0ff;
+  .repeat-btn {
+    background-color: #c67a76;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+  }
+
+  .repeat-btn:hover {
+    background-color: #e29a96;
+    cursor: pointer;
+  }
+
+  .repeat-btn:active {
+    background-color: #d88f8b;
+    box-shadow: 0 1px 1px 0 #d88f8b, 0 4px 7px 0 #d88f8b;
+  }
+
+  .repeat-btn-enabled {
+    background-color: #d88f8b;
+    box-shadow: 0 1px 1px 0 #d88f8b, 0 4px 7px 0 #d88f8b;
   }

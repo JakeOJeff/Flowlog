@@ -13,8 +13,13 @@
     background-color: #ffffff;
   }
 
-  .level-1 { background-color: #f7e0df; }
-  .level-2 { background-color: #f8cfcd; }
-  .level-3 { background-color: #f6bdba; }
-  .level-4 { background-color: #f3a4a0; }
-  .level-5 { background-color: #f18883;}
+  .level-1 { background-color: #f7e0df; } .level-1:hover { background-color: #f9eaea; } .level-1:active { background-color: #f9eaea; box-shadow: 0 1px 1px 0 #f9eaea, 0 4px 7px 0 #f9eaea;}
+  .level-2 { background-color: #f8cfcd; } .level-2:hover { background-color: #f9d1d1; } .level-2:active { background-color: #f9d1d1; box-shadow: 0 1px 1px 0 #f9d1d1, 0 4px 7px 0 #f9d1d1;}
+  .level-3 { background-color: #f6bdba; } .level-3:hover { background-color: #f8c3c0; } .level-3:active { background-color: #f8c3c0; box-shadow: 0 1px 1px 0 #f8c3c0, 0 4px 7px 0 #f8c3c0;}
+  .level-4 { background-color: #f3a4a0; } .level-4:hover { background-color: #f5aaaa; } .level-4:active { background-color: #f5aaaa; box-shadow: 0 1px 1px 0 #f5aaaa, 0 4px 7px 0 #f5aaaa;}
+  .level-5 { background-color: #f18883;} .level-5:hover { background-color: #f29c9a; } .level-5:active { background-color: #f29c9a; box-shadow: 0 1px 1px 0 #f29c9a, 0 4px 7px 0 #f29c9a;}
+  .level-6 { background-color: #f06c6a; } .level-6:hover { background-color: #f17f7d; } .level-6:active { background-color: #f17f7d; box-shadow: 0 1px 1px 0 #f17f7d, 0 4px 7px 0 #f17f7d;}
+  .level-7 { background-color: #ef5750; } .level-7:hover { background-color: #f06a66; } .level-7:active { background-color: #f06a66; box-shadow: 0 1px 1px 0 #f06a66, 0 4px 7px 0 #f06a66;}
+  .level-8 { background-color: #ed3f3a; } .level-8:hover { background-color: #ee524e; } .level-8:active { background-color: #ee524e; box-shadow: 0 1px 1px 0 #ee524e, 0 4px 7px 0 #ee524e;}
+  .level-9 { background-color: #eb2a25; } .level-9:hover { background-color: #ec3d39; } .level-9:active { background-color: #ec3d39; box-shadow: 0 1px 1px 0 #ec3d39, 0 4px 7px 0 #ec3d39;}
+  .level-10 { background-color: #e61c16; } .level-10:hover { background-color: #e72f2a; } .level-10:active { background-color: #e72f2a; box-shadow: 0 1px 1px 0 #e72f2a, 0 4px 7px 0 #e72f2a;}
