@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let totalDays = 0;
   let buildUserData = '';
   let isPlaying = false;
+  let streak = 0;
+  let mostProductiveTaskCount = 0;
+  let mostProductiveTaskName = '';
 
   // Music button setup
   if (musicButton) {
@@ -44,12 +47,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const tasks = data.tasks || [];
     for (let i = 0; i < 29 * 7; i++) {
       if (tasks[i]) {
+        ++streak;
+        if (tasks[i].count > mostProductiveTaskCount) {
+          mostProductiveTaskCount = tasks[i].count;
+          mostProductiveTaskName = tasks[i].name || 'No Task Found'
+        }
+
         totalTasks += tasks[i].count || 0;
         if (tasks[i].count > 0) {
           totalDays += 1;
         }
       }
+      else {
+        streak = 0;
+      }
     }
+
+
 
     buildUserData += ` : ${totalTasks} tasks done (${totalDays} days) :-`;
 
