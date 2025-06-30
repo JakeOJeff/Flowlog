@@ -13,5 +13,5 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   } else if (request.type === "get-music-state") {
     sendResponse({ playing: isPlaying });
   }
-
+\
 });
