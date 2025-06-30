@@ -7,14 +7,14 @@
   li {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin: 5px 0;
     padding: 8px 10px;
     color: #ffffff;
     border-radius: 4px;
     cursor: pointer;
     user-select: none;
-     font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 700; /* Try 600, 700, or 800 for bolder looks */
   }
 
@@ -25,8 +25,7 @@
     background-color: #aa5750;
     color: white;
     border: none;
-    margin-left: 10px;
-    padding: 5px 10px;
+    padding: 6px 10px;
     border-radius: 4px;
     cursor: pointer;
     transition-duration: 0.4s;
@@ -43,8 +42,7 @@
     background-color: #c67a76;
     color: white;
     border: none;
-    margin-left: 10px;
-    padding: 5px 10px;
+    padding: 6px 10px;
     border-radius: 4px;
     cursor: pointer;
     transition-duration: 0.4s;

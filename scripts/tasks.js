@@ -28,10 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
         repeatBtn.addEventListener("click", () => {
           toggleRepeat(index);   // Call your repeat function
         });
+        buttonsDiv.appendChild(li);
         buttonsDiv.appendChild(repeatBtn);
         buttonsDiv.appendChild(removeBtn);
         taskList.appendChild(buttonsDiv);
-        taskList.appendChild(li);
 
       });
     });
