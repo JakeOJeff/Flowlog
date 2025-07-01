@@ -1,0 +1,62 @@
+.timer-box {
+    border: none;
+    border-radius: 10px;
+    padding: 24px;
+    margin: 24px 0;
+    margin-bottom:14px;
+    background: #e5a9a9;
+
+    width: 200px;
+    /* ← Add this */
+    height: 75px;
+
+    transition-duration: 0.4s;
+}
+
+.timer-box:hover {
+    box-shadow: 0 2px 8px #e5a9a9;
+}
+
+.timer-display {
+    font: 3em 'Quicksand', sans-serif;
+    color: #ffffff;
+    font-weight: 800;
+    /* Try 600, 700, or 800 for bolder looks */
+    margin: 0;
+    text-align: center;
+}
+
+/* .view-timers {
+    display: flex;
+    justify-content: space-between;
+  align-items: center;
+
+    border-radius: 10px;
+    padding: 24px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 10px 0;
+    height: 25px;
+    width: 200px; 
+    background: #e5a9a9;
+    transition-duration: 0.4s;
+}
+
+.textMatter {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    color: #ffffff;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.imageMatter {
+    margin: 0;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+.view-timers:hover {
+    box-shadow: 0 2px 8px #e5a9a9;
+} */

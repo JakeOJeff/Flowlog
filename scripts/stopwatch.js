@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
             timer = setInterval(updateDisplay, 10);
             running = true;
             startBtn.style.display = 'none';
+            resetBtn.style.display = '';
+            stopBtn.style.display = '';
         }
     }
 

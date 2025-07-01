@@ -2,7 +2,7 @@ let mus1 = '/assets/imgs/music.png';
 let mus2 = '/assets/imgs/music2.png';
 var date = new Date();
 const timeOfDay =
-    ['Good morning', 'Good afternoon', 'Good evening', 'Good night'];
+  ['Good morning', 'Good afternoon', 'Good evening', 'Good night'];
 
 document.addEventListener("DOMContentLoaded", function () {
   const musicButton = document.getElementById('musicButton');
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Load user name and tasks, then update DOM
-  chrome.storage.local.get(['savedName', 'tasks'], (data) => {
+  chrome.storage.local.get(['savedName', 'tasks', 'streak', 'mostProductiveTaskCount', 'mostProductiveTaskName'], (data) => {
     const name = data.savedName || 'User';
     buildUserData = name;
 
@@ -54,8 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
         ++streak;
         if (tasks[i].count > mostProductiveTaskCount) {
           mostProductiveTaskCount = tasks[i].count;
-          mostProductiveTaskName = tasks[i].name || 'No Task Found'
+          mostProductiveTaskName = tasks[i].name || 'No Task Found';
         }
+
 
         totalTasks += tasks[i].count || 0;
         if (tasks[i].count > 0) {
@@ -79,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
       mostProductiveTaskElement.textContent = `Most Productive Task: ${mostProductiveTaskName} (${mostProductiveTaskCount} times)`;
     }
 
+    chrome.local.storage.set({ 'streak': streak, 'mostProductiveTask': mostProductiveTaskName, 'mostProductiveTaskCount': mostProductiveTaskCount });
     if (userTaskInfo) {
       userTaskInfo.textContent = buildUserData;
     } else {

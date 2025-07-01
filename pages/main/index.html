@@ -10,6 +10,7 @@
     <link href="/styles/button.css" rel="stylesheet">
     <link href="/styles/tasks.css" rel="stylesheet">
     <link href="/styles/stats.css" rel="stylesheet">
+    <link href="/styles/stopwatch.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <title>Flowlog</title>
@@ -30,14 +31,19 @@
             <div class="main">
                 <h2 id="welcomeMessage">Good evening, Jake 👋</h3>
                     <p>Let’s flow through your day mindfully.</p>
-                    <div class="timer-box" style="border: 1px solid #404040; border-radius: 10px; padding: 24px; max-width: 300px; margin: 24px 0; background: #2a2a2a; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                        <div id="timerDisplay" style="font-size: 2em; text-align: center;">00:00:00</div>
-                        <div class="buttons" style="display: flex; justify-content: center; gap: 16px; margin-top: 16px;">
-                            <img src="/assets/imgs/play.png" id="startBtn" class="imageICO" alt="Start" style="cursor:pointer;">
-                            <img src="/assets/imgs/pause.png" id="stopBtn" class="imageICO" alt="Stop" style="display:none; cursor:pointer;">
-                            <img src="/assets/imgs/stop.png" id="resetBtn" class="imageICO" alt="Reset" style="display:none; cursor:pointer;">
+                    <div class="timer-box">
+                        <div id="timerDisplay" class="timer-display">00:00:00</div>
+                        <div class="buttons"
+                            style="display: flex; justify-content: center; gap: 16px; margin-top: 16px;">
+                            <img src="/assets/imgs/play.png" id="startBtn" class="imageICO iconICOButton" alt="Start"
+                                style="cursor:pointer;">
+                            <img src="/assets/imgs/pause.png" id="stopBtn" class="imageICO iconICOButton" alt="Stop"
+                                style="cursor:pointer;">
+                            <img src="/assets/imgs/stop.png" id="resetBtn" class="imageICO iconICOButton" alt="Reset"
+                                style="cursor:pointer;">
                         </div>
                     </div>
+                    <button class="viewMoreItemsButton"><span>View Past Timers</span></button>
 
 
 
@@ -53,7 +59,7 @@
 
         <div id="Log" class="tabcontent">
             <div class="main">
-                <h2>Log</h2> 
+                <h2>Log</h2>
                 <input type="text" class="textInput" id="taskInput" placeholder="Enter Task" required>
                 <button class="mainButton" id="addTaskBtn">Add</button>
                 <ul id="taskList"></ul>

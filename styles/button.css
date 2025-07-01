@@ -1,6 +1,6 @@
 .imageICO {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
     position: absolute;
     background-size: cover;
     display: inline-block;
@@ -12,6 +12,72 @@
     color: #c67a76
 }
 
+.iconICOButton {
+    position: absolute;
+    background-size: cover;
+    display: inline-block;
+    border: none; 
+    background-color: #c67a76;
+    color: #fff;
+    border-radius: 50px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700; /* Try 600, 700, or 800 for bolder looks */
+    transition-duration: 0.4s;
+}
+
+.iconICOButton:hover {
+    background-color: #d88f8b;
+    box-shadow: 0 2px 8px #e5a9a9;
+    cursor: pointer;
+}
+
+.viewMoreItemsButton {
+  border-radius: 10px;
+  background-color: #e5a9a9;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px;
+  width: 200px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.viewMoreItemsButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.viewMoreItemsButton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+
+}
+
+.viewMoreItemsButton:hover {
+    box-shadow: 0 2px 8px #e5a9a9;
+}
+
+.viewMoreItemsButton:hover span {
+  padding-right: 25px;
+  
+}
+
+.viewMoreItemsButton:hover span:after {
+  opacity: 1;
+  right: 0;
+  
+}
 .mainButton {
     margin: 5px;
     width: 30%;
