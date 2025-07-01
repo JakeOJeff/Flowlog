@@ -8,11 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const timerDisplay = document.getElementById('timerDisplay');
     const startBtn = document.getElementById('startBtn');
-    const stopBtn = document.getElementById('stopBtn');
     const resetBtn = document.getElementById('resetBtn');
     startBtn.style.display = '';
     resetBtn.style.display = 'none';
-    stopBtn.style.display = 'none';
 
 
     function updateDisplay() {
@@ -32,17 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             running = true;
             startBtn.style.display = 'none';
             resetBtn.style.display = '';
-            stopBtn.style.display = '';
-        }
-    }
-
-    function stopTimer() {
-        if (running) {
-            elapsedTime += Date.now() - startTime;
-            clearInterval(timer);
-            running = false;
-            startBtn.style.display = '';
-            stopBtn.style.display = 'none';
+            saveState(); // save on start
         }
     }
 
@@ -53,10 +41,48 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDisplay();
         startBtn.style.display = '';
         resetBtn.style.display = 'none';
-        stopBtn.style.display = 'none';
+        saveState(); // save on reset
     }
+
+
+    function updateButtons() {
+        startBtn.style.display = running ? 'none' : '';
+        resetBtn.style.display = elapsedTime > 0 ? '' : 'none';
+    }
+
+    function saveState() {
+        chrome.storage.local.set({
+            stopwatch: {
+                startTime: running ? startTime : null,
+                elapsedTime,
+                running
+            }
+        });
+    }
+
+    function restoreState() {
+        chrome.storage.local.get('stopwatch', (data) => {
+            if (data.stopwatch) {
+                const state = data.stopwatch;
+                elapsedTime = state.elapsedTime || 0;
+                running = state.running || false;
+
+                if (running && state.startTime) {
+                    const now = Date.now();
+                    const timeSinceStart = now - state.startTime;
+                    elapsedTime += timeSinceStart;
+                    startTime = now;
+                    timer = setInterval(updateDisplay, 10);
+                }
+
+                updateDisplay();
+                updateButtons();
+            }
+        });
+    }
+
     startBtn.addEventListener('click', startTimer);
-    stopBtn.addEventListener('click', stopTimer);
     resetBtn.addEventListener('click', resetTimer);
-    updateDisplay(); // initialize
+    restoreState();
+
 });

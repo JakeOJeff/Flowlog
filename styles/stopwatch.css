@@ -1,15 +1,12 @@
 .timer-box {
     border: none;
     border-radius: 10px;
-    padding: 24px;
-    margin: 24px 0;
-    margin-bottom:14px;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin: 0;
     background: #e5a9a9;
-
     width: 200px;
-    /* ← Add this */
-    height: 75px;
-
     transition-duration: 0.4s;
 }
 
@@ -21,7 +18,6 @@
     font: 3em 'Quicksand', sans-serif;
     color: #ffffff;
     font-weight: 800;
-    /* Try 600, 700, or 800 for bolder looks */
     margin: 0;
     text-align: center;
 }

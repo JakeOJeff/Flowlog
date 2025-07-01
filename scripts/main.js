@@ -68,7 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-
+    document.querySelector('a').addEventListener('click', function (e) {
+      e.preventDefault();
+      window.open(this.href, '_blank');
+    });
 
     buildUserData += ` : ${totalTasks} tasks done (${totalDays} days)`;
 

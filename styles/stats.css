@@ -15,7 +15,7 @@
   
 
   .level-0 { background-color: #f3f3f3; } .level-0:hover { background-color: #f5f5f5; } .level-0:active { background-color: #f5f5f5; box-shadow: 0 1px 1px 0 #f5f5f5, 0 4px 7px 0 #f5f5f5;}
-  .level-1 { background-color: #f3a4a0; } .level-1:hover { background-color: #f5aaaa; } .level-1:active { background-color: #f5aaaa; box-shadow: 0 1px 1px 0 #f5aaaa, 0 4px 7px 0 #f5aaaa;}
-  .level-2 { background-color: #f18883;} .level-2:hover { background-color: #f29c9a; } .level-2:active { background-color: #f29c9a; box-shadow: 0 1px 1px 0 #f29c9a, 0 4px 7px 0 #f29c9a;}
-  .level-3 { background-color: #f06c6a; } .level-3:hover { background-color: #f17f7d; } .level-3:active { background-color: #f17f7d; box-shadow: 0 1px 1px 0 #f17f7d, 0 4px 7px 0 #f17f7d;}
-  .level-4 { background-color: #ef5750; } .level-4:hover { background-color: #f06a66; } .level-4:active { background-color: #f06a66; box-shadow: 0 1px 1px 0 #f06a66, 0 4px 7px 0 #f06a66;}
+  .level-1 { background-color: #ecc8c6; } .level-1:hover { background-color: #eacbca; } .level-1:active { background-color: #eacbca; box-shadow: 0 1px 1px 0 #f5aaaa, 0 4px 7px 0 #f5aaaa;}
+  .level-2 { background-color: #db9996;} .level-2:hover { background-color: #dca7a4; } .level-2:active { background-color: #dca7a4; box-shadow: 0 1px 1px 0 #f29c9a, 0 4px 7px 0 #f29c9a;}
+  .level-3 { background-color: #d07e7c; } .level-3:hover { background-color: #ca8b8a; } .level-3:active { background-color: #ca8b8a; box-shadow: 0 1px 1px 0 #f17f7d, 0 4px 7px 0 #f17f7d;}
+  .level-4 { background-color: #e7726c; } .level-4:hover { background-color: #e7918c; } .level-4:active { background-color: #e7918c; box-shadow: 0 1px 1px 0 #f06a66, 0 4px 7px 0 #f06a66;}

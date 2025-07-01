@@ -11,8 +11,8 @@ html, body {
 }
 h1 {
   text-align: center;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700; /* Try 600, 700, or 800 for bolder looks */  color: #84433d;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700; /* Try 600, 700, or 800 for bolder looks */  color: #84433d;
   font-size: 40px;
   margin:0
 }
@@ -38,9 +38,24 @@ p {
   font-family: 'Quicksand', sans-serif;
   margin-top: 2px;
   margin-bottom: 2px;
-  font-weight: 500; /* Try 400, 500, or 600 for different weights */
+  font-weight: 700; /* Try 400, 500, or 600 for different weights */
   color: #84433d;
   font-size: 14px;
+}
+
+a {
+  color: #945d58;
+  font-weight: 800;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 1.3px;
+
+}
+
+a:hover {
+  text-decoration-color: #b67b76;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 1.5px;
 }
 
 .fade-out-up {
@@ -56,4 +71,12 @@ p {
     opacity: 0;
     transform: translateY(-20px);
   }
+}
+
+.stickyHyperlinkFooter {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
 }
