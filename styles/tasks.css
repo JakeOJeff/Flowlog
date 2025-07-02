@@ -1,67 +1,35 @@
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+.task-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
 
-  li {
-    color: white;
-    border: none;
-    padding: 10px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition-duration: 0.4s;
-    margin-left: 3px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-  }
+.task-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #4d4d4d;
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  position: relative;
+  transition: transform 0.2s;
+}
 
+.task-header {
+  font-size: 16px;
+  font-weight: bold;
+}
 
+.task-date {
+  font-size: 12px;
+  color: #ccc;
+  margin-bottom: 8px;
+}
 
-
-  .remove-btn {
-    background-color: #f4cb94;
-    color: white;
-    border: none;
-    padding: 8px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition-duration: 0.4s;
-        margin-left: 3px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-  }
-
-  .remove-btn:hover {
-    background-color: #f3d8b6;
-    cursor: pointer;
-  }
-
-  .repeat-btn {
-    background-color: #F7DCB9;
-    color: white;
-    border: none;
-    padding: 8px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition-duration: 0.4s;
-        margin-left: 3px;
-
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-  }
-
-  .repeat-btn:hover {
-    background-color: #eedbc2;
-    cursor: pointer;
-  }
-
-  .repeat-btn:active {
-    background-color: #d6bc99;
-    box-shadow: 0 1px 1px 0 #d88f8b, 0 4px 7px 0 #d6bc99;
-  }
-
-  .repeat-btn-enabled {
-    background-color: #d6bc99;
-    box-shadow: 0 1px 1px 0 #d6bc99, 0 4px 7px 0 #d6bc99;
-  }
+.task-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
