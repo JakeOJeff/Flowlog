@@ -6,43 +6,52 @@ document.addEventListener("DOMContentLoaded", () => {
   function loadTasks() {
     chrome.storage.local.get("tasks", (data) => {
       const tasks = data.tasks || [];
-      taskList.innerHTML = "";
+      const container = document.getElementById("taskContainer");
+      container.innerHTML = "";
+
       tasks.forEach((task, index) => {
-        const li = document.createElement("li");
-        li.textContent = task.text;
-        li.className = `${getLevel(task.count || 0)}`;
-        li.addEventListener("click", () => addTaskCount(index));
+        const card = document.createElement("div");
+        card.className = `task-card ${getLevel(task.count || 0)}`;
 
-        const buttonsDiv = document.createElement("div");
-        buttonsDiv.className = "log-buttons-container";
-        const removeBtn = document.createElement("button");
-        removeBtn.textContent = "X"; // Cross symbol
-        removeBtn.className = "remove-btn";
-        removeBtn.addEventListener("click", () => {
-          removeTask(index);   // Call your remove function
-        });
+        // Title for card
+        const title = document.createElement("div");
+        title.className = "task.header";
+        title.textContent = task.text;
 
-        const repeatBtn = document.createElement("button");
-        repeatBtn.textContent = "O"; // Repeat symbol
-        repeatBtn.className = `${task.repeat ? "repeat-btn repeat-btn-enabled" : "repeat-btn"}`;
-        repeatBtn.addEventListener("click", () => {
-          toggleRepeat(index);   // Call your repeat function
-        });
-        buttonsDiv.appendChild(li);
-        buttonsDiv.appendChild(repeatBtn);
-        buttonsDiv.appendChild(removeBtn);
-        taskList.appendChild(buttonsDiv);
+        const dateText = document.createElement("div");
+        dateText.className = "task-date";
+        dateText.textContent = `Created: ${task.date || "Unavailable"}`;
+
+        const buttons = document.createElement("div");
+        buttons.className = "task-buttons";
+
+        const doBtn = document.createElement("button");
+        doBtn.textContent = "Do Task";
+        doBtn.className = "mainButton";
+        doBtn.addEventListener("click", () => addTaskCount(index))
+
+        buttons.appendChild(doBtn);
+        // buttons.appendChild(repeatBtn);
+        // buttons.appendChild(removeBtn);
+
+        card.appendChild(title);
+        card.appendChild(dateText);
+        card.appendChild(buttons);
+        container.appendChild(card);
 
       });
-    });
+
+
+
+    })
   }
 
   function removeTask(index) {
     chrome.storage.local.get("tasks", (data) => {
       const tasks = data.tasks || [];
-      if (index >= 0 && index < tasks.length){
+      if (index >= 0 && index < tasks.length) {
         tasks.splice(index, 1);
-        chrome.storage.local.set({tasks}, loadTasks);
+        chrome.storage.local.set({ tasks }, loadTasks);
       }
     });
   }
@@ -50,9 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function toggleRepeat(index) {
     chrome.storage.local.get("tasks", (data) => {
       const tasks = data.tasks || [];
-      if (index >= 0 && index < tasks.length){
+      if (index >= 0 && index < tasks.length) {
         tasks[index].repeat = !tasks[index].repeat;
-        chrome.storage.local.set({tasks}, loadTasks);
+        chrome.storage.local.set({ tasks }, loadTasks);
       }
     });
   }
@@ -71,13 +80,31 @@ document.addEventListener("DOMContentLoaded", () => {
           stats[today] = (stats[today] || 0) + 1;
           chrome.storage.local.set({ stats });
         });
-        
+
       }
 
       chrome.storage.local.set({ tasks }, loadTasks);
     });
   }
 
+  function cleanUpTasks() {
+    chrome.storage.local.get("tasks", (data) => {
+      const today = new Date().toISOString().split("T")[0];
+      const updated = (data.tasks || []).map(task => {
+        if (task.date !== today) {
+          if (task.repeat) {
+            task.count = 0;
+            task.date = today;
+            return task;
+          }
+          return null;
+        }
+        return task;
+      }).filter(Boolean);
+
+      chrome.storage.local.set({ tasks: updated }, loadTasks);
+    });
+  }
 
 
   addTaskBtn.addEventListener("click", () => {
@@ -89,7 +116,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     chrome.storage.local.get("tasks", (data) => {
       const tasks = data.tasks || [];
-      tasks.push({ text, selected: false, count: 1, repeat: false });
+      const today = new Date().toISOString().split("T")[0];
+      tasks.push({ text, selected: false, count: 1, repeat: false, date: today });
       chrome.storage.local.set({ tasks }, () => {
         taskInput.value = "";
         loadTasks();
