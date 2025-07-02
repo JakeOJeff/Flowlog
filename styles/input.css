@@ -9,22 +9,22 @@
     /* Try 600, 700, or 800 for bolder looks */
     font-size: 16px;
     color: #fff;
-    background-color: #DEAC80;
+    background-color: var(--input-box);
     transition-duration: 0.4s
 }
 
 .textInput:hover {
-    background-color: #e6bb96;
+    background-color: var(--input-box-hover);
 }
 
 .textInput:focus {
-    background-color: #e6bb96;
+    background-color: var(--input-box-hover);
     border: 0px solid #ccc;
     outline: none;
 }
 
 .textInput:active {
-    background-color: #e6bb96;
+    background-color: var(--input-box-hover);
     border: 0px solid #ccc;
 }
 

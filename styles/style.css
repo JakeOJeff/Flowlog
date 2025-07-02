@@ -9,41 +9,52 @@
   --heading-big: #ac682d;
   --heading-small: #DEAC80;
   --paragraph: #B99470;
+  --hyperlink: #B99470;
+  --hyperlink-hover: #d8ba9b;
 
   --timer-text-color: #ac682d;
+
+  --input-box: #DEAC80;
+  --input-box-hover: #e6bb96;
 }
 
-html, body {
+html,
+body {
   width: 500px;
   height: 550px;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* <-- prevents scrollbars */
-  border: 2px solid #fbe9d2;
-  background-color: #fbe9d2;
+  overflow: hidden;
+  /* <-- prevents scrollbars */
+  border: 2px solid var(--main-bg);
+  background-color: var(--main-bg);
 }
+
 h1 {
   text-align: center;
   font-family: 'Quicksand', sans-serif;
-  font-weight: 900; /* Try 600, 700, or 800 for bolder looks */  color: #ac682d;
+  font-weight: 900;
+  color: var(--heading-big);
   font-size: 52px;
-  margin:0
+  margin: 0
 }
 
 h2 {
-    text-align: center;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 800; /* Try 600, 700, or 800 for bolder looks */    color: #ac682d;
-    font-size: 38px;
-    margin:0
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 800;
+  color: var(--heading-big);
+  font-size: 38px;
+  margin: 0
 }
 
 h3 {
-    text-align: center;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700; /* Try 600, 700, or 800 for bolder looks */    color: #DEAC80;
-    font-size: 26px;
-      margin:2px
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  color: var(--heading-small);
+  font-size: 26px;
+  margin: 2px
 }
 
 p {
@@ -51,13 +62,13 @@ p {
   font-family: 'Quicksand', sans-serif;
   margin-top: 2px;
   margin-bottom: 2px;
-  font-weight: 700; /* Try 400, 500, or 600 for different weights */
-  color: #B99470;
+  font-weight: 700;
+  color: var(--paragraph);
   font-size: 14px;
 }
 
 a {
-  color: #B99470;
+  color: var(--hyperlink);
   font-weight: 800;
   text-decoration-line: underline;
   text-decoration-style: wavy;
@@ -66,7 +77,7 @@ a {
 }
 
 a:hover {
-  text-decoration-color: #d8ba9b;
+  text-decoration-color: var(--hyperlink-hover);
   text-decoration-style: wavy;
   text-decoration-thickness: 1.5px;
 }
@@ -80,6 +91,7 @@ a:hover {
     opacity: 1;
     transform: translateY(0);
   }
+
   100% {
     opacity: 0;
     transform: translateY(-20px);
@@ -87,9 +99,9 @@ a:hover {
 }
 
 .stickyHyperlinkFooter {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
 }
