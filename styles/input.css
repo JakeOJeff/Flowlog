@@ -1,13 +1,15 @@
 .textInput {
-  width: 50%;
-  padding: 10px;
-  border: 0px solid #ccc;
-  border-radius: 6px;
-  box-sizing: border-box;
+    width: 50%;
+    padding: 10px;
+    border: 0px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 700; /* Try 600, 700, or 800 for bolder looks */  font-size: 16px;
-  color: #fff;
-  background-color: #DEAC80;
+    font-weight: 700;
+    /* Try 600, 700, or 800 for bolder looks */
+    font-size: 16px;
+    color: #fff;
+    background-color: #DEAC80;
     transition-duration: 0.4s
 }
 
@@ -20,6 +22,7 @@
     border: 0px solid #ccc;
     outline: none;
 }
+
 .textInput:active {
     background-color: #e6bb96;
     border: 0px solid #ccc;

@@ -1,4 +1,17 @@
+:root {
+  --button: #8c966d;
+  --button-hover: #9aa27e;
+  --button-shadow: #9aa27e;
 
+  --main-bg: #fbe9d2;
+  --container-bg: #efd0a8;
+
+  --heading-big: #ac682d;
+  --heading-small: #DEAC80;
+  --paragraph: #B99470;
+
+  --timer-text-color: #ac682d;
+}
 
 html, body {
   width: 500px;

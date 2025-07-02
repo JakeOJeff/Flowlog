@@ -4,17 +4,17 @@
     position: absolute;
     background-size: cover;
 }
+
 .musicButton {
     bottom: 0;
     left: 0;
     padding: 10px;
-    color: #8c966d
 }
 
 .iconICOButton {
     background-size: cover;
     padding-top: 0px;
-    background-color: #8c966d;
+    background-color: var(--button);
     color: #fff;
     border-radius: 50px;
     width: 52px;
@@ -23,75 +23,77 @@
 }
 
 .iconICOButton:hover {
-    background-color: #9aa27e;
-    box-shadow: 0 2px 8px #9aa27e;
+    background-color: var(--button-hover);
+    box-shadow: 0 2px 8px var(--button-shadow);
     cursor: pointer;
 }
 
 .viewMoreItemsButton {
-  border-radius: 10px;
-  background-color: #8c966d;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  padding: 20px;
-  width: 200px;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 15px;
-  font-weight: 800;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
+    border-radius: 10px;
+    background-color: var(--button);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    width: 200px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
 }
 
 .viewMoreItemsButton span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
 }
 
 .viewMoreItemsButton span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
 
 }
 
 .viewMoreItemsButton:hover {
-    box-shadow: 0 2px 8px #9aa27e;
+    box-shadow: 0 2px 8px var(--button-hover);
 }
 
 .viewMoreItemsButton:hover span {
-  padding-right: 25px;
-  
+    padding-right: 25px;
+
 }
 
 .viewMoreItemsButton:hover span:after {
-  opacity: 1;
-  right: 0;
-  
+    opacity: 1;
+    right: 0;
+
 }
+
 .mainButton {
     margin: 5px;
     width: 30%;
     height: 5%;
     background-size: cover;
     display: inline-block;
-    background-color: #B5C18E;
+    background-color: var(--button);
     color: #fff;
     border: none;
     border-radius: 10px;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 700; /* Try 600, 700, or 800 for bolder looks */
+    font-weight: 700;
+    /* Try 600, 700, or 800 for bolder looks */
     transition-duration: 0.4s;
 }
 
 .mainButton:hover {
-    background-color: #c9d4a3;
-      box-shadow: 0 5px 4px 0 #c9d4a3, 0 17px 30px 0 #c9d4a3;
+    background-color: var(--button-hover);
+    box-shadow: 0 5px 4px 0 var(--button-hover), 0 17px 30px 0 var(--button-hover);
     cursor: pointer;
-    }
+}

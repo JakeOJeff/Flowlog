@@ -13,7 +13,7 @@
     height: 100%;
     background-size: cover;
     display: inline-block;
-    background-color: #8c966d;
+    background-color: var(--button);
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -23,16 +23,16 @@
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-    background-color: #9aa27e;
-    box-shadow: 0 3px 2px 0 #c9d4a3, 0 8px 15px 0 #c9d4a3;
+    background-color: var(--button-hover);
+    box-shadow: 0 3px 2px 0 var(--button-shadow), 0 8px 15px 0 var(--button-shadow);
         cursor: pointer;
     transition-duration: 0.4s;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-    background-color: #9aa27e;
-    box-shadow: 0 1px 1px 0 #c9d4a3, 0 4px 7px 0 #c9d4a3;
+    background-color: var(--button-hover);
+    box-shadow: 0 1px 1px 0 var(--button-shadow), 0 4px 7px 0 var(--button-shadow);
 }
 
 /* Style the tab content */
