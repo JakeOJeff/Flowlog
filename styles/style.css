@@ -6,13 +6,13 @@ html, body {
   margin: 0;
   padding: 0;
   overflow: hidden; /* <-- prevents scrollbars */
-  border: 2px solid #f2dddd;
-  background-color: #f2dddd;
+  border: 2px solid #fbe9d2;
+  background-color: #fbe9d2;
 }
 h1 {
   text-align: center;
   font-family: 'Quicksand', sans-serif;
-  font-weight: 900; /* Try 600, 700, or 800 for bolder looks */  color: #84433d;
+  font-weight: 900; /* Try 600, 700, or 800 for bolder looks */  color: #d89a63;
   font-size: 52px;
   margin:0
 }
@@ -20,7 +20,7 @@ h1 {
 h2 {
     text-align: center;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 800; /* Try 600, 700, or 800 for bolder looks */    color: #aa5750;
+    font-weight: 800; /* Try 600, 700, or 800 for bolder looks */    color: #d89a63;
     font-size: 38px;
     margin:0
 }
@@ -28,7 +28,7 @@ h2 {
 h3 {
     text-align: center;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 700; /* Try 600, 700, or 800 for bolder looks */    color: #ab5a53;
+    font-weight: 700; /* Try 600, 700, or 800 for bolder looks */    color: #DEAC80;
     font-size: 26px;
       margin:2px
 }
@@ -39,12 +39,12 @@ p {
   margin-top: 2px;
   margin-bottom: 2px;
   font-weight: 700; /* Try 400, 500, or 600 for different weights */
-  color: #84433d;
+  color: #B99470;
   font-size: 14px;
 }
 
 a {
-  color: #945d58;
+  color: #B99470;
   font-weight: 800;
   text-decoration-line: underline;
   text-decoration-style: wavy;
@@ -53,7 +53,7 @@ a {
 }
 
 a:hover {
-  text-decoration-color: #b67b76;
+  text-decoration-color: #d8ba9b;
   text-decoration-style: wavy;
   text-decoration-thickness: 1.5px;
 }

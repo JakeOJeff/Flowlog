@@ -7,21 +7,21 @@
     font-family: 'Quicksand', sans-serif;
     font-weight: 700; /* Try 600, 700, or 800 for bolder looks */  font-size: 16px;
   color: #fff;
-  background-color: #e5a9a9;
+  background-color: #DEAC80;
     transition-duration: 0.4s
 }
 
 .textInput:hover {
-    background-color: #efbaba;
+    background-color: #e6bb96;
 }
 
 .textInput:focus {
-    background-color: #efbaba;
+    background-color: #e6bb96;
     border: 0px solid #ccc;
     outline: none;
 }
 .textInput:active {
-    background-color: #efbaba;
+    background-color: #e6bb96;
     border: 0px solid #ccc;
 }
 

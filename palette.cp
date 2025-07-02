@@ -1,3 +1,30 @@
+
+// Soft Background
+$soft-background: #fbe9d2;rgb(251, 233, 210)
+
+// Light Accent (hover states, subtle backgrounds)
+$light-accent: #F7DCB9; rgb(247, 220, 185)
+lightAccentBorder = #d6bc99;rgb(214, 188, 153)
+
+// Button or Primary Accent Color
+$button-color: #8c966d; 
+
+//Button hover
+#9aa27e ;
+
+// Bolder Heading color 
+$Bolder-heading-color: #d89a63;
+
+// Heading / Emphasis Text
+$heading-color: #DEAC80;rgb(222, 172, 128)
+
+// Primary Text / Borders / Footer
+$text-color: #B99470;rgb(185, 148, 112)
+
+
+
+
+
 // Soft Background
 $soft-background: #f2dddd;
 

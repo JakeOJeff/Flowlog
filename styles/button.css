@@ -8,13 +8,13 @@
     bottom: 0;
     left: 0;
     padding: 10px;
-    color: #c67a76
+    color: #8c966d
 }
 
 .iconICOButton {
     background-size: cover;
     padding-top: 0px;
-    background-color: #c67a76;
+    background-color: #8c966d;
     color: #fff;
     border-radius: 50px;
     width: 52px;
@@ -23,14 +23,14 @@
 }
 
 .iconICOButton:hover {
-    background-color: #d88f8b;
-    box-shadow: 0 2px 8px #e5a9a9;
+    background-color: #9aa27e;
+    box-shadow: 0 2px 8px #9aa27e;
     cursor: pointer;
 }
 
 .viewMoreItemsButton {
   border-radius: 10px;
-  background-color: #e5a9a9;
+  background-color: #8c966d;
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -62,7 +62,7 @@
 }
 
 .viewMoreItemsButton:hover {
-    box-shadow: 0 2px 8px #e5a9a9;
+    box-shadow: 0 2px 8px #9aa27e;
 }
 
 .viewMoreItemsButton:hover span {
@@ -81,7 +81,7 @@
     height: 5%;
     background-size: cover;
     display: inline-block;
-    background-color: #c67a76;
+    background-color: #B5C18E;
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -91,7 +91,7 @@
 }
 
 .mainButton:hover {
-    background-color: #d88f8b;
-      box-shadow: 0 5px 4px 0 #d88f8b, 0 17px 30px 0 #d88f8b;
+    background-color: #c9d4a3;
+      box-shadow: 0 5px 4px 0 #c9d4a3, 0 17px 30px 0 #d88f8b;
     cursor: pointer;
     }

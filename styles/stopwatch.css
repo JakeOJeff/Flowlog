@@ -8,7 +8,7 @@
     padding-left: 24px;
     padding-right: 24px;
     margin: 0;
-    background: #e5a9a9;
+    background: #F7DCB9;
     width: 200px;
     transition-duration: 0.4s;
 }
@@ -21,12 +21,12 @@
 
 /* Rest of your existing CSS remains the same */
 .timer-box:hover {
-    box-shadow: 0 2px 8px #e5a9a9;
+    box-shadow: 0 2px 8px #F7DCB9;
 }
 
 .timer-display {
     font: 3.7em 'Quicksand', sans-serif;
-    color: #ffffff;
+    color: #d89a63;
     font-weight: 900;
     margin: 0;
     margin-bottom: 6px;
