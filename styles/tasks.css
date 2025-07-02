@@ -20,7 +20,7 @@
 
 
   .remove-btn {
-    background-color: #aa5750;
+    background-color: #f4cb94;
     color: white;
     border: none;
     padding: 8px 10px;
@@ -33,12 +33,12 @@
   }
 
   .remove-btn:hover {
-    background-color: #ac6b66;
+    background-color: #f3d8b6;
     cursor: pointer;
   }
 
   .repeat-btn {
-    background-color: #c67a76;
+    background-color: #F7DCB9;
     color: white;
     border: none;
     padding: 8px 10px;
@@ -52,16 +52,16 @@
   }
 
   .repeat-btn:hover {
-    background-color: #e29a96;
+    background-color: #eedbc2;
     cursor: pointer;
   }
 
   .repeat-btn:active {
-    background-color: #d88f8b;
-    box-shadow: 0 1px 1px 0 #d88f8b, 0 4px 7px 0 #d88f8b;
+    background-color: #d6bc99;
+    box-shadow: 0 1px 1px 0 #d88f8b, 0 4px 7px 0 #d6bc99;
   }
 
   .repeat-btn-enabled {
-    background-color: #d88f8b;
-    box-shadow: 0 1px 1px 0 #d88f8b, 0 4px 7px 0 #d88f8b;
+    background-color: #d6bc99;
+    box-shadow: 0 1px 1px 0 #d6bc99, 0 4px 7px 0 #d6bc99;
   }

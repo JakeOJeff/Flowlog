@@ -12,7 +12,7 @@ html, body {
 h1 {
   text-align: center;
   font-family: 'Quicksand', sans-serif;
-  font-weight: 900; /* Try 600, 700, or 800 for bolder looks */  color: #d89a63;
+  font-weight: 900; /* Try 600, 700, or 800 for bolder looks */  color: #ac682d;
   font-size: 52px;
   margin:0
 }
@@ -20,7 +20,7 @@ h1 {
 h2 {
     text-align: center;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 800; /* Try 600, 700, or 800 for bolder looks */    color: #d89a63;
+    font-weight: 800; /* Try 600, 700, or 800 for bolder looks */    color: #ac682d;
     font-size: 38px;
     margin:0
 }
