@@ -1,24 +1,35 @@
 .timer-box {
     border: none;
     border-radius: 10px;
-    align-items: center;
-    justify-content: center;
-    padding: 0px;
+    display: flex;          /* Add flex display */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;    /* Center children horizontally */
+    padding: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
     margin: 0;
     background: #e5a9a9;
     width: 200px;
     transition-duration: 0.4s;
 }
 
+.timer-box > div {          /* Target the div containing buttons */
+    display: flex;          /* Make it a flex container */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 10px;             /* Add some space between buttons */
+}
+
+/* Rest of your existing CSS remains the same */
 .timer-box:hover {
     box-shadow: 0 2px 8px #e5a9a9;
 }
 
 .timer-display {
-    font: 3em 'Quicksand', sans-serif;
+    font: 3.7em 'Quicksand', sans-serif;
     color: #ffffff;
-    font-weight: 800;
+    font-weight: 900;
     margin: 0;
+    margin-bottom: 6px;
     text-align: center;
 }
 

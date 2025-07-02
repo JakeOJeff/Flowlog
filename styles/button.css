@@ -17,8 +17,8 @@
     background-color: #c67a76;
     color: #fff;
     border-radius: 50px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700; /* Try 600, 700, or 800 for bolder looks */
+    width: 52px;
+    height: 52px;
     transition-duration: 0.4s;
 }
 

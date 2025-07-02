@@ -12,16 +12,16 @@ html, body {
 h1 {
   text-align: center;
   font-family: 'Quicksand', sans-serif;
-  font-weight: 700; /* Try 600, 700, or 800 for bolder looks */  color: #84433d;
-  font-size: 40px;
+  font-weight: 900; /* Try 600, 700, or 800 for bolder looks */  color: #84433d;
+  font-size: 52px;
   margin:0
 }
 
 h2 {
     text-align: center;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 700; /* Try 600, 700, or 800 for bolder looks */    color: #aa5750;
-    font-size: 28px;
+    font-weight: 800; /* Try 600, 700, or 800 for bolder looks */    color: #aa5750;
+    font-size: 38px;
     margin:0
 }
 
@@ -29,7 +29,7 @@ h3 {
     text-align: center;
     font-family: 'Quicksand', sans-serif;
     font-weight: 700; /* Try 600, 700, or 800 for bolder looks */    color: #ab5a53;
-    font-size: 20px;
+    font-size: 26px;
       margin:2px
 }
 
