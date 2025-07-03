@@ -3,16 +3,30 @@
   flex-direction: column;
   gap: 10px;
   margin-top: 20px;
+
+  /* Scrollable logic */
+  max-height: 300px;   /* You can adjust this height as needed */
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.task-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.task-container::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 20px;
 }
 
 .task-card {
   display: flex;
   flex-direction: column;
-  background-color: #4d4d4d;
+  background-color: var(--task-card-bg);
   padding: 15px;
   border-radius: 8px;
   color: white;
-  font-family: 'Quicksand', sans-serif;
+  font-family: var(--font), sans-serif;
   position: relative;
   transition: transform 0.2s;
 }
@@ -24,7 +38,7 @@
 
 .task-date {
   font-size: 12px;
-  color: #ccc;
+  color: white;
   margin-bottom: 8px;
 }
 

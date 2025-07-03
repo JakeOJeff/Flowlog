@@ -125,5 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  loadTasks();
+  cleanUpTasks();
+loadTasks();
+
 });

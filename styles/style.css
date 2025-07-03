@@ -6,7 +6,7 @@
   --main-bg: #fbe9d2;
   --container-bg: #efd0a8;
 
-  --heading-big: #ac682d;
+  --heading-big: #ffffff;
   --heading-small: #DEAC80;
   --paragraph: #B99470;
   --hyperlink: #B99470;
@@ -16,12 +16,23 @@
 
   --input-box: #DEAC80;
   --input-box-hover: #e6bb96;
+
+  --task-card-bg: #DEAC80;
+
+  --level-1: #DEAC80;
+  --level-2:#DEAC80;
+  --level-3: #DEAC80;
+  --level-4: #DEAC80;
+
+  /* Font */
+  --font: 'Quicksand';
+
 }
 
 html,
 body {
   width: 500px;
-  height: 550px;
+  height: 575px;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -32,7 +43,7 @@ body {
 
 h1 {
   text-align: center;
-  font-family: 'Quicksand', sans-serif;
+  font-family: var(--font), sans-serif;
   font-weight: 900;
   color: var(--heading-big);
   font-size: 52px;
@@ -41,7 +52,7 @@ h1 {
 
 h2 {
   text-align: center;
-  font-family: 'Quicksand', sans-serif;
+  font-family: var(--font), sans-serif;
   font-weight: 800;
   color: var(--heading-big);
   font-size: 38px;
@@ -50,7 +61,7 @@ h2 {
 
 h3 {
   text-align: center;
-  font-family: 'Quicksand', sans-serif;
+  font-family: var(--font), sans-serif;
   font-weight: 700;
   color: var(--heading-small);
   font-size: 26px;
@@ -59,7 +70,7 @@ h3 {
 
 p {
   text-align: center;
-  font-family: 'Quicksand', sans-serif;
+  font-family: var(--font), sans-serif;
   margin-top: 2px;
   margin-bottom: 2px;
   font-weight: 700;

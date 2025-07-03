@@ -26,45 +26,41 @@
 }
 
 .level-1 {
-  background-color: #d9cfc9;
+  background-color: var(--level-1);
 }
 .level-1:hover {
-  background-color: #cfbfb8;
+  background-color: var(--level-1);
 }
 .level-1:active {
-  background-color: #cfbfb8;
-  box-shadow: 0 1px 1px 0 #cfbfb8, 0 4px 7px 0 #cfbfb8;
+  box-shadow: 0 1px 1px 0 var(--level-1), 0 4px 7px 0 var(--level-1);
 }
 
 .level-2 {
-  background-color: #c2a892;
+  background-color: var(--level-2);
 }
 .level-2:hover {
-  background-color: #bfa28c;
+  background-color: var(--level-2);
 }
 .level-2:active {
-  background-color: #bfa28c;
-  box-shadow: 0 1px 1px 0 #bfa28c, 0 4px 7px 0 #bfa28c;
+  box-shadow: 0 1px 1px 0 var(--level-2), 0 4px 7px 0 var(--level-2);
 }
 
 .level-3 {
-  background-color: #b08b6b;
+  background-color: var(--level-3);
 }
 .level-3:hover {
-  background-color: #a97f5e;
+  background-color: var(--level-3);
 }
 .level-3:active {
-  background-color: #a97f5e;
-  box-shadow: 0 1px 1px 0 #a97f5e, 0 4px 7px 0 #a97f5e;
+  box-shadow: 0 1px 1px 0 var(--level-3), 0 4px 7px 0 var(--level-3);
 }
 
 .level-4 {
-  background-color: #B99470;
+  background-color: var(--level-4);
 }
 .level-4:hover {
-  background-color: #a57f5b;
+  background-color: var(--level-4);
 }
 .level-4:active {
-  background-color: #a57f5b;
-  box-shadow: 0 1px 1px 0 #a57f5b, 0 4px 7px 0 #a57f5b;
+  box-shadow: 0 1px 1px 0 var(--level-4), 0 4px 7px 0 var(--level-4);
 }

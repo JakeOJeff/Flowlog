@@ -25,7 +25,7 @@
 }
 
 .timer-display {
-    font: 3.7em 'Quicksand', sans-serif;
+    font: 3.7em var(--font), sans-serif;
     color: var(--timer-text-color);;
     font-weight: 900;
     margin: 0;

@@ -4,7 +4,7 @@
     border: 0px solid #ccc;
     border-radius: 6px;
     box-sizing: border-box;
-    font-family: 'Quicksand', sans-serif;
+    font-family: var(--font), sans-serif;
     font-weight: 700;
     /* Try 600, 700, or 800 for bolder looks */
     font-size: 16px;
