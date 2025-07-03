@@ -10,33 +10,55 @@ document.addEventListener("DOMContentLoaded", () => {
       container.innerHTML = "";
 
       tasks.forEach((task, index) => {
+        // CARD DIV
         const card = document.createElement("div");
-        card.className = `task-card ${getLevel(task.count || 0)}`;
+        card.className = `task-card `;
+        // card.className = `task-card ${getLevel(task.count || 0)}`;
 
-        // Title for card
-        const title = document.createElement("div");
-        title.className = "task.header";
-        title.textContent = task.text;
+            const infoBox = document.createElement("div");
+            
+                const title = document.createElement("h3");
+                title.textContent = task.text;
 
-        const dateText = document.createElement("div");
-        dateText.className = "task-date";
-        dateText.textContent = `Created: ${task.date || "Unavailable"}`;
+                const dateText = document.createElement("p");
+                dateText.textContent = `Created: ${task.date || "Unavailable"}`;
 
-        const buttons = document.createElement("div");
-        buttons.className = "task-buttons";
+            // CARD -> BUTTONS DIV
+            const buttonsBox = document.createElement("div");
+            buttonsBox.className = "task-buttons ";
 
-        const doBtn = document.createElement("button");
-        doBtn.textContent = "Do Task";
-        doBtn.className = "mainButton";
-        doBtn.addEventListener("click", () => addTaskCount(index))
+                const doBtn = document.createElement("button");
+                doBtn.textContent = "Do Task";
+                doBtn.className = "mainButton"
+                doBtn.addEventListener("click", () => addTaskCount(index))
 
-        buttons.appendChild(doBtn);
-        // buttons.appendChild(repeatBtn);
-        // buttons.appendChild(removeBtn);
+            
+            // CARD -> COUNTS BOX DIV
+            const countsBox = document.createElement("div");
+            countsBox.className = "";
 
-        card.appendChild(title);
-        card.appendChild(dateText);
-        card.appendChild(buttons);
+                // const countsText = document.createElement("p");
+                // countsText.className = "tasks-count-label"
+                // countsText.textContent = task.count 
+
+                const countsImage = document.createElement("div");
+                countsImage.className = "tasks-filler-box"
+                countsImage.backgroundColor = `${getLevel(task.count || 0)}`
+        
+
+        infoBox.appendChild(title);
+        infoBox.appendChild(dateText);
+
+        buttonsBox.appendChild(doBtn);
+        
+        // countsBox.appendChild(countsText)
+        countsBox.appendChild(countsImage)
+        // buttonsBox.appendChild(repeatBtn);
+        // buttonsBox.appendChild(removeBtn);
+
+        card.appendChild(infoBox);
+        card.appendChild(buttonsBox);
+        card.appendChild(countsBox);
         container.appendChild(card);
 
       });
