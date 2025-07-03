@@ -6,7 +6,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const theme = selector.value;
         if (theme === 'diva') {
+            root.setProperty('--button', '#c67a76');
+            root.setProperty('--button-hover', '#d88f8b');
+            root.setProperty('--button-shadow', '#d88f8b');
 
+            root.setProperty('--main-bg', '#f2dddd');
+            root.setProperty('--container-bg', '#e5a9a9');
+
+            root.setProperty('--heading-big', '#aa5750');
+            root.setProperty('--heading-small', '#aa6d68');
+            root.setProperty('--paragraph', '#753a33');
+            root.setProperty('--hyperlink', '#804943');
+            root.setProperty('--hyperlink-hover', '#8c5d58');
+
+            root.setProperty('--timer-text-color', '#ffffff');
+
+            root.setProperty('--input-box', '#d48585');
+            root.setProperty('--input-box-hover', '#d48585');
+
+            root.setProperty('--task-card-bg', '#e5a9a9');
+
+            root.setProperty('--font', 'Quicksand');
+
+            // Stat level indicators - lush green gradient
+            root.setProperty('--level-1', '#d0f0c0');  // soft mint/moss (level 1)
+            root.setProperty('--level-2', '#9ccc65');  // leaf green
+            root.setProperty('--level-3', '#66bb6a');  // vibrant plant green
+            root.setProperty('--level-4', '#2e7d32');  // deep forest/jungle green
         }
         if (theme === 'amber-dusk') {
             root.setProperty('--button', '#87986a');              // muted sage green

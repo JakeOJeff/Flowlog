@@ -29,7 +29,7 @@ $text-color: #B99470;rgb(185, 148, 112)
 $soft-background: #f2dddd;
 
 // Light Accent (hover states, subtle backgrounds)
-$light-accent: #e5a9a9;
+$light-accent: #e5a9a9;#d48585
 lightAccentBorder = {0.949, 0.796, 0.796},  -- approx #f2cbcb
 
 // Button or Primary Accent Color
@@ -39,10 +39,10 @@ $button-color: #c67a76;
 #d88f8b
 
 // Heading / Emphasis Text
-$heading-color: #aa5750;
+$heading-color: #aa5750;#aa6d68
 
 // Primary Text / Borders / Footer
-$text-color: #753a33;
+$text-color: #753a33;#8c5d58;
 
 
 
