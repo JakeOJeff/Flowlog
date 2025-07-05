@@ -59,11 +59,12 @@
         <div id="Log" class="tabcontent">
             <div class="main">
                 <h2>Log</h2>
-                <div style="display: flex; justify-content: center;"><input type="text" class="textInput" id="taskInput" placeholder="Enter Task" required><select id="prioritySelect">
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                </select></div>
+                <div style="display: flex; justify-content: center;"><input type="text" class="textInput" id="taskInput"
+                        placeholder="Enter Task" required><select id="prioritySelect">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select></div>
                 <button class="mainButton" id="addTaskBtn">Add</button>
                 <div id="taskContainer" class="task-container"></div>
             </div>
@@ -79,21 +80,25 @@
                 <p id="streak">10 Day</p>
                 <p id="mostProductiveTask">You did this Reading the most </p>
                 <h3>-: User Settings and Preferences :-</h3>
-                
 
-                <div style="justify-content: center;">
-                    <div style="display: flex;"><p>Preferred Theme : </p>
 
-                    <select name="theme-selector" id="theme-selection">
-                        <option value="diva">Diva</option>
-                        <option value="amber-dusk">Amber Dusk</option>
-                        <option value="wooden">Wooden</option>
-                        <option value="forest">Forest</option>
-                        <option value="night">Night</option>
-                        <option value="dark">Dark</option>
-                        <option value="ocean">Ocean</option>
-                    </select></div>
-                    <div style="display: flex;"><p>Name : </p><img src="/assets/imgs/edit.png"> </div>
+                <div style="justify-content: center; align-content: space-between;">
+                    <div style="display: flex; align-items: center;">
+                        <p>Preferred Theme :    </p>
+
+                        <select name="theme-selector" id="theme-selection">
+                            <option value="diva">Diva</option>
+                            <option value="amber-dusk">Amber Dusk</option>
+                            <option value="wooden">Wooden</option>
+                            <option value="forest">Forest</option>
+                            <option value="night">Night</option>
+                            <option value="dark">Dark</option>
+                            <option value="ocean">Ocean</option>
+                        </select>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <p>Name :    </p><img src="/assets/imgs/edit.png" style="box-shadow: 2px;">
+                    </div>
                 </div>
             </div>
         </div>

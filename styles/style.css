@@ -39,7 +39,7 @@ body {
   /* <-- prevents scrollbars */
   border: 2px solid var(--main-bg);
   background-color: var(--main-bg);
-  transition-duration: 1s;
+  transition-duration: 0.5s;
 }
 
 h1 {
@@ -48,7 +48,7 @@ h1 {
   font-weight: 900;
   color: var(--heading-big);
   font-size: 52px;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
   margin: 0
 }
 
@@ -58,7 +58,7 @@ h2 {
   font-weight: 800;
   color: var(--heading-big);
   font-size: 38px;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
   margin: 0
 }
 
@@ -68,7 +68,7 @@ h3 {
   font-weight: 700;
   color: var(--heading-small);
   font-size: 26px;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
 
   margin: 2px
 }
@@ -79,7 +79,7 @@ p {
   margin-top: 2px;
   margin-bottom: 2px;
   font-weight: 700;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
 
   color: var(--paragraph);
   font-size: 14px;
@@ -90,7 +90,7 @@ a {
   font-weight: 800;
   text-decoration-line: underline;
   text-decoration-style: wavy;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
 
   text-decoration-thickness: 1.3px;
 
@@ -103,26 +103,30 @@ a:hover {
 }
 
 select {
-  
   padding: 10px;
-  border-radius: 10px;
-  color: var(--paragraph);
+  border-radius: 6px;
+  color: white;
   font-family: var(--font), sans-serif;
+  font-size: 16px;
+  font-weight: 550;
   border: 0px;
   transition-duration: 0.5s;
-  background-color: var(--container-bg);
+  background-color: var(--input-box);
+  
 }
 
 
 select:hover, select:focus, select:active {
   outline: none;
+  background-color: var(--input-box-hover);
 }
 
 select option {
-    color: var(--paragraph);
-font-family: var(--font), sans-serif;
-  border: 0px;
-  background-color: var(--container-bg);
+  color: vwhite;
+  font-family: var(--font), sans-serif;
+  font-size: 16px;
+  font-weight: 550;
+  border: 5px;
 }
 
 .fade-out-up {

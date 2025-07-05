@@ -118,6 +118,8 @@ document.addEventListener("DOMContentLoaded", () => {
       chrome.storage.local.set({ tasks }, loadTasks);
     });
   }
+
+  //ADD TASK FUNCTION
   function handleAddTask() {
     const text = taskInput.value.trim();
     if (text === "") return;
@@ -128,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
     chrome.storage.local.get("tasks", (data) => {
       const tasks = data.tasks || [];
       const today = new Date().toISOString().split("T")[0];
-      tasks.push({ text, selected: false, count: 1, repeat: false, date: today });
+      tasks.push({ text, selected: false, priority, count: 1, repeat: false, date: today });
       chrome.storage.local.set({ tasks }, () => {
         taskInput.value = "";
         loadTasks();

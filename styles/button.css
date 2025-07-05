@@ -19,7 +19,7 @@
     border-radius: 50px;
     width: 52px;
     height: 52px;
-    transition-duration: 0.4s;
+    transition-duration: 0.5s;
 }
 
 .iconICOButton:hover {
@@ -91,7 +91,7 @@
     font-family: var(--font), sans-serif;
     font-weight: 700;
     /* Try 600, 700, or 800 for bolder looks */
-    transition-duration: 0.4s;
+    transition-duration: 0.5s;
 }
 
 .mainButton:hover {

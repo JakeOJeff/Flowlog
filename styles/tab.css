@@ -18,7 +18,7 @@
     border: none;
     border-radius: 10px;
     font-family: var(--font), sans-serif;
-    font-weight: 700; /* Try 600, 700, or 800 for bolder looks */    transition-duration: 0.4s;
+    font-weight: 700; /* Try 600, 700, or 800 for bolder looks */    transition-duration: 0.5s;
 }
 
 /* Change background color of buttons on hover */
@@ -26,7 +26,7 @@
     background-color: var(--button-hover);
     box-shadow: 0 3px 2px 0 var(--button-shadow), 0 8px 15px 0 var(--button-shadow);
         cursor: pointer;
-    transition-duration: 0.4s;
+    transition-duration: 0.5s;
 }
 
 /* Create an active/current tablink class */

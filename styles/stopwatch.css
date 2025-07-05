@@ -10,7 +10,7 @@
     margin: 0;
     background: var(--container-bg);
     width: 200px;
-    transition-duration: 0.4s;
+    transition-duration: 0.5s;
 }
 
 .timer-box > div {          /* Target the div containing buttons */
