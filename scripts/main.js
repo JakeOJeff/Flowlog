@@ -81,11 +81,11 @@ document.addEventListener("DOMContentLoaded", function () {
       window.open(this.href, '_blank');
     });
 
-    buildUserData += ` : ${totalTasks} tasks done (${totalDays} days)`;
+    buildUserData += ` : ${totalTasks} tasks done (${totalDays} day(s))`;
 
 
     if (streakElement) {
-      streakElement.textContent = `Streak: ${streak} days`;
+      streakElement.textContent = `Streak: ${streak} day(s)`;
     }
     else {
       console.error("Element with id 'streak' not found.");

@@ -67,8 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
             priorityVal = "!";
             break;
         }
-        const priorityText = document.createElement("p");
-        priorityText.style = "font-size: 1.2em; font-weight: bold; justify-content: top; align-items: right;";
+        const priorityText = document.createElement("div");
+        priorityText.style = "font-size: 2em; font-weight: bold; justify-content: right; margin: 0; padding:0;";
         priorityText.textContent = `${priorityVal}`;
 
         infoBox.appendChild(title);
@@ -81,10 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
         buttonsBox.appendChild(repeatBtn);
         buttonsBox.appendChild(removeBtn);
 
+        card.appendChild(priorityText);
         card.appendChild(infoBox);
         card.appendChild(buttonsBox);
         card.appendChild(countsBox);
-        card.appendChild(priorityText);
         container.appendChild(card);
 
       });
