@@ -55,6 +55,21 @@ document.addEventListener("DOMContentLoaded", () => {
         countsImage.className = "tasks-filler-box"
         countsImage.backgroundColor = `${getLevel(task.count || 0)}`
 
+        let priorityVal = "!"
+        switch (task.priority) {
+          case "high":
+            priorityVal = "!!!";
+            break;
+          case "medium":
+            priorityVal = "!!";
+            break;
+          case "low":
+            priorityVal = "!";
+            break;
+        }
+        const priorityText = document.createElement("p");
+        priorityText.style = "font-size: 1.2em; font-weight: bold; justify-content: top; align-items: right;";
+        priorityText.textContent = `${priorityVal}`;
 
         infoBox.appendChild(title);
         infoBox.appendChild(dateText);
@@ -69,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         card.appendChild(infoBox);
         card.appendChild(buttonsBox);
         card.appendChild(countsBox);
+        card.appendChild(priorityText);
         container.appendChild(card);
 
       });
@@ -121,12 +137,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //ADD TASK FUNCTION
   function handleAddTask() {
+
+    const prioritySelect = document.getElementById('prioritySelect');
+    let priority = prioritySelect.value || "low"; // Default to low if not set
+
+    prioritySelect.addEventListener('change', () => {
+      priority = prioritySelect.value;
+    });
     const text = taskInput.value.trim();
     if (text === "") return;
     if (text.length > 25) {
       alert("Task text is too long! Please limit it to 25 characters.");
       return;
     }
+    
     chrome.storage.local.get("tasks", (data) => {
       const tasks = data.tasks || [];
       const today = new Date().toISOString().split("T")[0];

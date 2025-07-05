@@ -233,7 +233,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Save the new name to localStorage or wherever you store it
             localStorage.setItem('savedName', newName);
             // Optionally update the UI immediately
-                    editNameText.textContent = `Name: ${newName}`;
+            editNameText.textContent = `Name: ${newName}`;
+            
             chrome.storage.local.set({ savedName: newName });
 
         }
