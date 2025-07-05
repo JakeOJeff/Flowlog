@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let buildUserData = '';
   let isPlaying = false;
   let streak = 0;
+  let currentStreak = 0;
   let mostProductiveTaskCount = 0;
   let mostProductiveTaskName = '';
 
@@ -49,25 +50,32 @@ document.addEventListener("DOMContentLoaded", function () {
       `${timeOfDay[Math.floor(current_hour / 6)]}, ${name} 👋`;
 
     const tasks = data.tasks || [];
-    for (let i = 0; i < 29 * 7; i++) {
-      if (tasks[i]) {
-        ++streak;
-        if (tasks[i].count > mostProductiveTaskCount) {
-          mostProductiveTaskCount = tasks[i].count;
-          mostProductiveTaskName = tasks[i].name || 'No Task Found';
-        }
+    for (let i = 0; i < 29 * 7; i++){
+      const task =tasks[i];
 
-
-        totalTasks += tasks[i].count || 0;
-        if (tasks[i].count > 0) {
-          totalDays += 1;
+      if (task && task.count > 0) {
+        currentStreak++;
+        totalTasks += task.count;
+        totalDays++;
+        if ( task.count > mostProductiveTaskCount) {
+          mostProductiveTaskCount = task.count;
+          mostProductiveTaskName = task.text || 'No found task';
         }
       }
       else {
-        streak = 0;
+        currentStreak = 0;
+      }
+
+      // Max Streak encountered
+      if (currentStreak > streak) {
+        streak = currentStreak;
       }
     }
-
+    chrome.storage.local.set({
+      'streak': streak,
+      'mostProductiveTask': mostProductiveTaskName,
+      'mostProductiveTaskCount': mostProductiveTaskCount
+    });
     document.querySelector('a').addEventListener('click', function (e) {
       e.preventDefault();
       window.open(this.href, '_blank');
@@ -79,11 +87,16 @@ document.addEventListener("DOMContentLoaded", function () {
     if (streakElement) {
       streakElement.textContent = `Streak: ${streak} days`;
     }
+    else {
+      console.error("Element with id 'streak' not found.");
+    }
     if (mostProductiveTaskElement) {
       mostProductiveTaskElement.textContent = `Most Productive Task: ${mostProductiveTaskName} (${mostProductiveTaskCount} times)`;
     }
+    else {
+      console.error("Element with id 'mostProductiveTaskElement' not found.");
+    }
 
-    chrome.local.storage.set({ 'streak': streak, 'mostProductiveTask': mostProductiveTaskName, 'mostProductiveTaskCount': mostProductiveTaskCount });
     if (userTaskInfo) {
       userTaskInfo.textContent = buildUserData;
     } else {

@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
             root.setProperty('--font', 'Quicksand');
 
             // Stat level indicators - lush green gradient
-            root.setProperty('--level-1', '#d0f0c0');  // soft mint/moss (level 1)
-            root.setProperty('--level-2', '#9ccc65');  // leaf green
-            root.setProperty('--level-3', '#66bb6a');  // vibrant plant green
-            root.setProperty('--level-4', '#2e7d32');  // deep forest/jungle green
+            root.setProperty('--level-1', '#dec2c1');  // soft mint/moss (level 1)
+            root.setProperty('--level-2', '#dea7a4');  // leaf green
+            root.setProperty('--level-3', '#de9490');  // vibrant plant green
+            root.setProperty('--level-4', '#e07872');  // deep forest/jungle green
         }
         if (theme === 'amber-dusk') {
             root.setProperty('--button', '#87986a');              // muted sage green
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             root.setProperty('--main-bg', '#f9e3cb');             // parchment base
             root.setProperty('--container-bg', '#edd0a2');        // golden tan
 
-            root.setProperty('--heading-big', '#5a3c1f');         // deep amber brown
+            root.setProperty('--heading-big', '#a36222');         // deep amber brown
             root.setProperty('--heading-small', '#d69f6b');       // warm light wood
             root.setProperty('--paragraph', '#a67855');           // soft brown for text
             root.setProperty('--hyperlink', '#b07555');           // natural wood accent
@@ -178,11 +178,12 @@ document.addEventListener('DOMContentLoaded', () => {
             root.setProperty('--font', 'Inter');
 
             // Stat Levels - grayscale brightness
-            root.setProperty('--level-1', '#444444');
-            root.setProperty('--level-2', '#666666');
-            root.setProperty('--level-3', '#999999');
-            root.setProperty('--level-4', '#ffffff');
+            root.setProperty('--level-1', '#CCCCCC');
+            root.setProperty('--level-2', '#999999');
+            root.setProperty('--level-3', '#666666');
+            root.setProperty('--level-4', '#444444');
         }
+        
 
 
         if (theme === 'ocean') {

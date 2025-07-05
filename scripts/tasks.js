@@ -15,46 +15,56 @@ document.addEventListener("DOMContentLoaded", () => {
         card.className = `task-card `;
         // card.className = `task-card ${getLevel(task.count || 0)}`;
 
-            const infoBox = document.createElement("div");
-            
-                const title = document.createElement("h3");
-                title.textContent = task.text;
+        const infoBox = document.createElement("div");
 
-                const dateText = document.createElement("p");
-                dateText.textContent = `Created: ${task.date || "Unavailable"}`;
+        const title = document.createElement("h3");
+        title.textContent = task.text;
 
-            // CARD -> BUTTONS DIV
-            const buttonsBox = document.createElement("div");
-            buttonsBox.className = "task-buttons ";
+        const dateText = document.createElement("p");
+        dateText.textContent = `Created: ${task.date || "Unavailable"}`;
 
-                const doBtn = document.createElement("button");
-                doBtn.textContent = "Do Task";
-                doBtn.className = "mainButton"
-                doBtn.addEventListener("click", () => addTaskCount(index))
+        // CARD -> BUTTONS DIV
+        const buttonsBox = document.createElement("div");
+        buttonsBox.className = "task-buttons ";
 
-            
-            // CARD -> COUNTS BOX DIV
-            const countsBox = document.createElement("div");
-            countsBox.className = "";
+        const doBtn = document.createElement("button");
+        doBtn.textContent = "Do Task";
+        doBtn.className = "mainButton"
+        doBtn.addEventListener("click", () => addTaskCount(index))
 
-                // const countsText = document.createElement("p");
-                // countsText.className = "tasks-count-label"
-                // countsText.textContent = task.count 
+        const repeatBtn = document.createElement("button");
+        repeatBtn.textContent = task.repeat ? "Repeating" : "Repeat";
+        repeatBtn.className = task.repeat ? "mainButton mainButton-enabled" : "mainButton"
+        repeatBtn.addEventListener("click", () => toggleRepeat(index));
 
-                const countsImage = document.createElement("div");
-                countsImage.className = "tasks-filler-box"
-                countsImage.backgroundColor = `${getLevel(task.count || 0)}`
-        
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "Remove"
+        removeBtn.className = "mainButton"
+        removeBtn.addEventListener("click", () => removeTask(index));
+
+
+        // CARD -> COUNTS BOX DIV
+        const countsBox = document.createElement("div");
+        countsBox.className = "";
+
+        // const countsText = document.createElement("p");
+        // countsText.className = "tasks-count-label"
+        // countsText.textContent = task.count 
+
+        const countsImage = document.createElement("div");
+        countsImage.className = "tasks-filler-box"
+        countsImage.backgroundColor = `${getLevel(task.count || 0)}`
+
 
         infoBox.appendChild(title);
         infoBox.appendChild(dateText);
 
         buttonsBox.appendChild(doBtn);
-        
+
         // countsBox.appendChild(countsText)
         countsBox.appendChild(countsImage)
-        // buttonsBox.appendChild(repeatBtn);
-        // buttonsBox.appendChild(removeBtn);
+        buttonsBox.appendChild(repeatBtn);
+        buttonsBox.appendChild(removeBtn);
 
         card.appendChild(infoBox);
         card.appendChild(buttonsBox);
@@ -108,6 +118,25 @@ document.addEventListener("DOMContentLoaded", () => {
       chrome.storage.local.set({ tasks }, loadTasks);
     });
   }
+  function handleAddTask() {
+    const text = taskInput.value.trim();
+    if (text === "") return;
+    if (text.length > 25) {
+      alert("Task text is too long! Please limit it to 25 characters.");
+      return;
+    }
+    chrome.storage.local.get("tasks", (data) => {
+      const tasks = data.tasks || [];
+      const today = new Date().toISOString().split("T")[0];
+      tasks.push({ text, selected: false, count: 1, repeat: false, date: today });
+      chrome.storage.local.set({ tasks }, () => {
+        taskInput.value = "";
+        loadTasks();
+      });
+    });
+  }
+
+
 
   function cleanUpTasks() {
     chrome.storage.local.get("tasks", (data) => {
@@ -129,25 +158,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  addTaskBtn.addEventListener("click", () => {
-    const text = taskInput.value.trim();
-    if (text === "") return;
-    if (text.length > 25) {
-      alert("Task text is too long! Please limit it to 25 characters.");
-      return;
+    // Button click
+  addTaskBtn.addEventListener("click", handleAddTask);
+
+  // Enter key press in input
+  taskInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      handleAddTask();
     }
-    chrome.storage.local.get("tasks", (data) => {
-      const tasks = data.tasks || [];
-      const today = new Date().toISOString().split("T")[0];
-      tasks.push({ text, selected: false, count: 1, repeat: false, date: today });
-      chrome.storage.local.set({ tasks }, () => {
-        taskInput.value = "";
-        loadTasks();
-      });
-    });
   });
 
   cleanUpTasks();
-loadTasks();
+  loadTasks();
 
 });
