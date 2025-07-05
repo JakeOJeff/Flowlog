@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const selector = document.getElementById('theme-selection');
     const root = document.documentElement.style;
+    const editNameText = document.getElementById('editNameText');
 
     selector.addEventListener('change', () => {
 
@@ -220,7 +221,23 @@ document.addEventListener('DOMContentLoaded', () => {
         // Optionally persist in localStorage
         localStorage.setItem('selected-theme', theme);
     });
+    
+    chrome.storage.local.get('savedName', (data) => {
+        const name = data.savedName || 'User';
+        editNameText.textContent = `Name: ${name}`;
+    });
 
+    editNameText.addEventListener('click', () => {
+        const newName = prompt('Enter your name:');
+        if (newName) {
+            // Save the new name to localStorage or wherever you store it
+            localStorage.setItem('savedName', newName);
+            // Optionally update the UI immediately
+                    editNameText.textContent = `Name: ${newName}`;
+            chrome.storage.local.set({ savedName: newName });
+
+        }
+    });
     // Restore theme on load
     const savedTheme = localStorage.getItem('selected-theme');
     if (savedTheme) {
