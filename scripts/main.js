@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const userTaskInfo = document.getElementById('userTaskInfo');
   const streakElement = document.getElementById('streak');
   const mostProductiveTaskElement = document.getElementById('mostProductiveTask');
+  const viewMoreItems = document.getElementById('viewMoreItems');
 
 
   let totalTasks = 0;
@@ -71,6 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
         streak = currentStreak;
       }
     }
+    viewMoreItems.addEventListener('click',  () => {
+      window.location.href = '/pages/tasks/index.html';
+    })
     chrome.storage.local.set({
       'streak': streak,
       'mostProductiveTask': mostProductiveTaskName,
