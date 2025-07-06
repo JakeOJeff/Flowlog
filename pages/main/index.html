@@ -11,6 +11,8 @@
     <link href="/styles/tasks.css" rel="stylesheet">
     <link href="/styles/stats.css" rel="stylesheet">
     <link href="/styles/stopwatch.css" rel="stylesheet">
+        <link href="/styles/modal.css" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <title>Flowlog</title>
@@ -45,15 +47,30 @@
                     <button class="viewMoreItemsButton" id="viewMoreItems"><span>View Past Timers</span></button>
 
                     <!-- modal box -->
-                     <div class="modal" id="timerModal">
+                    <!-- <div class="modal" id="timerModal">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h2>Past Timers</h2>
-                                
+                                <span class=" modal-close" id="closeTimerModal">&times;</span>
+                                </div>
+                            <div class="modal-body">
+
+                            </div>
                         </div>
-                     </div>
+                     </div> -->
 
-
+                    <!-- Modal container -->
+                    <div class="modal" id="timerModal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2>Past Timers</h2>
+                                <span class="close-button" id="closeModal">&times;</span>
+                            </div>
+                            <div class="modal-body" id="timerList">
+                                <!-- Timer entries will be dynamically added here -->
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
 
@@ -92,7 +109,7 @@
 
                 <div style="justify-content: center; align-content: space-between;">
                     <div style="display: flex; align-items: center;">
-                        <p>Preferred Theme :    </p>
+                        <p>Preferred Theme : </p>
 
                         <select name="theme-selector" id="theme-selection">
                             <option value="diva">Diva</option>
@@ -105,7 +122,7 @@
                         </select>
                     </div>
                     <div style="display: flex; align-items: center;">
-                        <p id="editNameText">Name :    </p><img src="/assets/imgs/edit.png" style="box-shadow: 2px;">
+                        <p id="editNameText">Name : </p><img src="/assets/imgs/edit.png" style="box-shadow: 2px;">
                     </div>
                 </div>
             </div>
@@ -124,6 +141,7 @@
 <script src="/scripts/stats.js"></script>
 <script src="/scripts/stopwatch.js"></script>
 <script src="/scripts/settings.js"></script>
+<script src="/scripts/modal.js"></script>
 
 
 

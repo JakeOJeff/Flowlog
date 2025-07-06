@@ -22,6 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         timerDisplay.textContent = `${hours}:${minutes}:${seconds}`;
     }
+    function saveTimer(timerString) {
+        chrome.storage.local.get("timers", (data) => {
+            const timers = data.timers || [];
+            timers.unshift(timerString); // add new one at top
+            chrome.storage.local.set({ timers });
+        });
+    }
 
     function startTimer() {
         if (!running) {
@@ -77,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 updateDisplay();
                 updateButtons();
+                saveState();
             }
         });
     }
