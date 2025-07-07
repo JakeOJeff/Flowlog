@@ -84,6 +84,7 @@
     color: #fff;
     border: none;
     border-radius: 10px;
+    padding-bottom: 2px;
     font-family: var(--font), sans-serif;
     font-weight: 700;
     /* Try 600, 700, or 800 for bolder looks */

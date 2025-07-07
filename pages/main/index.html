@@ -27,31 +27,33 @@
             <button class="tablinks" id="log">Log</button>
             <button class="tablinks" id="profile">Profile</button>
         </div>
-<!-- Modal Box -->
-                    <div class="modal" id="modal">
-                        
-                        <button class="mainButton close-button" id="closeModal">X</button>
-                        <div class="modal-content" id="modal-content">
-                            <!-- Different Modals -->
+        <!-- Modal Box -->
+        <div id="modal-overlay" class="modal-overlay"></div>
 
-                            <div class="timerModal" id="timerModal">
-                                <h3 style="margin-top: 5px;">Past Timers</h3>
-                                <div style="margin-top: 15px;" id="timerList" class="timer-list">
-                                    <!-- Timers will be dynamically loaded here -->
-                                    <p>No timers recorded yet.</p>
-                                </div>
+        <div class="modal" id="modal">
 
-                            </div>
+            <button class="mainButton close-button" id="closeModal">X</button>
+            <div class="modal-content" id="modal-content">
+                <!-- Different Modals -->
 
-                            <div class="editNameModal" id="editNameModal">
-                                <h2 style="margin-top: 5px;" >Edit Name</h2>
-                                <input style="margin-top: 15px; width: 75%;" type="text" id="editNameInput" class="textInput" placeholder="Enter your name"
-                                    required>
-                                <button class="mainButton" id="saveNameBtn">Save</button>
-                            </div>
-                        </div>
-                    
+                <div class="timerModal" id="timerModal">
+                    <h3 style="margin-top: 5px;">Past Timers</h3>
+                    <div style="margin-top: 15px;" id="timerList" class="timer-list">
+                        <!-- Timers will be dynamically loaded here -->
+                        <p>No timers recorded yet.</p>
                     </div>
+
+                </div>
+
+                <div class="editNameModal" id="editNameModal">
+                    <h2 style="margin-top: 5px;">Edit Name</h2>
+                    <input style="margin-top: 15px; width: 75%;" type="text" id="editNameInput" class="textInput"
+                        placeholder="Enter your name" required>
+                    <button class="mainButton" id="saveNameBtn">Save</button>
+                </div>
+            </div>
+
+        </div>
         <!-- Tab content -->
         <div id="Flow" class="tabcontent">
             <div class="main">
@@ -71,7 +73,7 @@
                     <button class="viewMoreItemsButton" id="viewMoreItems"><span>View Past
                             Timers</span></button>
 
-                    
+
 
             </div>
         </div>
@@ -126,7 +128,9 @@
                         </select>
                     </div>
                     <div style="display: flex; align-items: center;">
-                        <p id="editNameText">Name : </p><img class="iconICOButton" style="background-color: var(--input-box); padding: 4px; margin-left: 16px; width: 18px; height: 18px;" id="editNameButton" src="/assets/imgs/edit.png" style="box-shadow: 2px;">
+                        <p id="editNameText">Name : </p><img class="iconICOButton"
+                            style="background-color: var(--input-box); padding: 4px; margin-left: 16px; width: 18px; height: 18px;"
+                            id="editNameButton" src="/assets/imgs/edit.png" style="box-shadow: 2px;">
                     </div>
                 </div>
             </div>
