@@ -10,9 +10,7 @@
         "scripting",
         "offscreen"
     ],
-    "background": {
-        "service_worker": "background.js"
-    },
+    
     "action": {
         "default_popup": "index.html",
         "default_icon": "icon2.png"

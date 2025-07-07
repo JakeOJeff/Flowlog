@@ -13,16 +13,26 @@ document.addEventListener("DOMContentLoaded", () => {
   chrome.storage.local.get("stats", (data) => {
     const stats = data.stats || {};
     const today = new Date();
+    const tooltip = document.querySelector('.stats-tooltip');
 
     for (let i = 0; i < (29 * 7); i++) {
       const date = new Date(today);
       date.setDate(today.getDate() - i);
       const key = date.toISOString().split("T")[0];
       const count = stats[key] || 0;
+      
 
       const box = document.createElement("div");
+      box.addEventListener('mouseenter', () => {
+        
+        tooltip.textContent = `${key}: ${count} task(s)`;
+        tooltip.style.display = 'block';
+      });
+      box.addEventListener('mouseleave', () => {
+        tooltip.style.display = 'none';
+      });    
       box.className = `box ${getLevel(count)}`;
-      box.title = `${key}: ${count} task(s)`;
+      box.title = `${key}: ${count} task(s)`; //TOOLTIP
       grid.prepend(box); // newest to the right
     }
   });
