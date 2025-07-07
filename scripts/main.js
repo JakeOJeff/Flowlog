@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // IF NEED TO CLEAR DATA 
   // Clear data from chrome.storage.local
+  
   // chrome.storage.local.clear(function () {
   //   if (chrome.runtime.lastError) {
   //     console.error("Error clearing local storage: " + chrome.runtime.lastError.message);

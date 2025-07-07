@@ -77,7 +77,7 @@
 .mainButton {
     margin: 5px;
     width: 30%;
-    height: 5%;
+    height: 15%;
     background-size: cover;
     display: inline-block;
     background-color: var(--button);

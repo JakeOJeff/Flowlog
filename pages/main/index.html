@@ -27,7 +27,32 @@
             <button class="tablinks" id="log">Log</button>
             <button class="tablinks" id="profile">Profile</button>
         </div>
+<!-- Modal Box -->
+                    <div class="modal" id="modal">
+                        
+                        <button class="mainButton close-button" id="closeModal">X</button>
+                        <div class="modal-content" id="modal-content">
+                            <!-- Different Modals -->
 
+                            <div class="timerModal" id="timerModal">
+                                <h2>Past Timers</h2>
+                                <div id="timerList" class="timer-list">
+                                    <!-- Timers will be dynamically loaded here -->
+                                    <p>No timers recorded yet.</p>
+                                </div>
+                                <button class="mainButton" id="closeTimerModal">Close</button>
+
+                            </div>
+
+                            <div class="editNameModal" id="editNameModal">
+                                <h2>Edit Name</h2>
+                                <input type="text" id="editNameInput" class="textInput" placeholder="Enter your name"
+                                    required>
+                                <button class="mainButton" id="saveNameBtn">Save</button>
+                            </div>
+                        </div>
+                    
+                    </div>
         <!-- Tab content -->
         <div id="Flow" class="tabcontent">
             <div class="main">
@@ -47,11 +72,7 @@
                     <button class="viewMoreItemsButton" id="viewMoreItems"><span>View Past
                             Timers</span></button>
 
-                    <!-- Modal Box -->
-                    <div class="timers-modal" id="timers-modal">
-                        
-                        <button class="close-button" id="closeModal">X</button>
-                    </div>
+                    
 
             </div>
         </div>
@@ -106,7 +127,7 @@
                         </select>
                     </div>
                     <div style="display: flex; align-items: center;">
-                        <p id="editNameText">Name : </p><img src="/assets/imgs/edit.png" style="box-shadow: 2px;">
+                        <p id="editNameText">Name : </p><img class="editNameButtonClass" id="editNameButton" src="/assets/imgs/edit.png" style="box-shadow: 2px;">
                     </div>
                 </div>
             </div>
