@@ -1,9 +1,10 @@
-const audio = document.getElementById("bgm");
+let audio = new Audio("assets/music/peace.mp3");
+audio.loop = true;
 
-chrome.runtime.onMessage.addListener((msg) => {
-  if (msg.type === "start-music") {
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.type === "play-audio") {
     audio.play();
-  } else if (msg.type === "pause-music") {
+  } else if (request.type === "stop-audio") {
     audio.pause();
   }
 });

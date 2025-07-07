@@ -1,17 +1,15 @@
-let audio = new Audio("/assets/music/peace.mp3");
-audio.loop = true;
+async function ensureOffscreen() {
+  if (await chrome.offscreen.hasDocument()) return;
+  await chrome.offscreen.createDocument({
+    url: 'offscreen.html',
+    reasons: [chrome.offscreen.Reason.AUDIO_PLAYBACK],
+    justification: 'Play background music for mood tracker extension'
+  });
+}
 
-let isPlaying = false;
-
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.type === "play-audio") {
-    audio.play();
-    isPlaying = true;
-  } else if (request.type === "stop-audio") {
-    audio.pause();
-    isPlaying = false;
-  } else if (request.type === "get-music-state") {
-    sendResponse({ playing: isPlaying });
+chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
+  if (request.type === "ensure-offscreen") {
+    await ensureOffscreen();
+    sendResponse({ success: true });
   }
-
 });

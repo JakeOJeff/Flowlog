@@ -5,6 +5,12 @@ const timeOfDay =
   ['Good morning', 'Good afternoon', 'Good evening', 'Good night'];
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Ensure offscreen document is ready first
+  chrome.runtime.sendMessage({ type: "ensure-offscreen" }, () => {
+    // Then send the audio control message
+    chrome.runtime.sendMessage({ type: "play-audio" }); // or "stop-audio"
+  });
+
   const musicButton = document.getElementById('musicButton');
   const userTaskInfo = document.getElementById('userTaskInfo');
   const streakElement = document.getElementById('streak');
@@ -51,14 +57,14 @@ document.addEventListener("DOMContentLoaded", function () {
       `${timeOfDay[Math.floor(current_hour / 6)]}, ${name} 👋`;
 
     const tasks = data.tasks || [];
-    for (let i = 0; i < 29 * 7; i++){
-      const task =tasks[i];
+    for (let i = 0; i < 29 * 7; i++) {
+      const task = tasks[i];
 
       if (task && task.count > 0) {
         currentStreak++;
         totalTasks += task.count;
         totalDays++;
-        if ( task.count > mostProductiveTaskCount) {
+        if (task.count > mostProductiveTaskCount) {
           mostProductiveTaskCount = task.count;
           mostProductiveTaskName = task.text || 'No found task';
         }
@@ -72,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
         streak = currentStreak;
       }
     }
-    viewMoreItems.addEventListener('click',  () => {
+    viewMoreItems.addEventListener('click', () => {
       window.location.href = '/pages/tasks/index.html';
     })
     chrome.storage.local.set({
