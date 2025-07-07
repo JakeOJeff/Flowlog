@@ -12,7 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Modals & their Content
     const timerModal = document.getElementById('timerModal');
+    
+
     const editNameModal = document.getElementById('editNameModal');
+        const saveNameButton = document.getElementById('saveNameBtn');
+        const editNameInput = document.getElementById('editNameInput');
+        const editNameText = document.getElementById('editNameText');
 
     timersModalsButton.addEventListener('click', () => {
         //loadTimers();
@@ -46,6 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+    saveNameButton.addEventListener('click', () => {
+        const newName = editNameInput.value.trim();
+        if (newName) {
+            chrome.storage.local.set({ savedName: newName }, () => {
+                editNameText.textContent = `Name: ${newName}`;
+
+            });
+            editNameModal.style.display = 'none';
+            modal.classList.remove('show');
+            editNameInput.value = ''; // Clear the input field
+        }
+    });
 
 
 

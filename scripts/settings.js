@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const newName = prompt('Enter your name:');
         if (newName) {
             // Save the new name to localStorage or wherever you store it
-            localStorage.setItem('savedName', newName);
+            
             // Optionally update the UI immediately
             editNameText.textContent = `Name: ${newName}`;
             
