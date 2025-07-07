@@ -1,28 +1,28 @@
 :root {
-  --button: #8c966d;
-  --button-hover: #9aa27e;
-  --button-shadow: #9aa27e;
+  --button: #c67a76;
+  --button-hover: #d88f8b;
+  --button-shadow: #d88f8b;
 
-  --main-bg: #fbe9d2;
-  --container-bg: #efd0a8;
+  --main-bg: #f2dddd;
+  --container-bg: #e5a9a9;
 
-  --heading-big: #ffffff;
-  --heading-small: #DEAC80;
-  --paragraph: #B99470;
-  --hyperlink: #B99470;
-  --hyperlink-hover: #d8ba9b;
+  --heading-big: #aa5750;
+  --heading-small: #aa6d68;
+  --paragraph: #753a33;
+  --hyperlink: #804943;
+  --hyperlink-hover: #8c5d58;
 
-  --timer-text-color: #ac682d;
+  --timer-text-color: #ffffff;
 
-  --input-box: #DEAC80;
-  --input-box-hover: #e6bb96;
+  --input-box: #d48585;
+  --input-box-hover: #d48585;
 
-  --task-card-bg: #DEAC80;
+  --task-card-bg: #e5a9a9;
 
-  --level-1: #DEAC80;
-  --level-2: #DEAC80;
-  --level-3: #DEAC80;
-  --level-4: #DEAC80;
+  --level-1: #dec2c1;
+  --level-2: #dea7a4;
+  --level-3: #de9490;
+  --level-4: #e07872;
 
   /* Font */
   --font: 'Quicksand';

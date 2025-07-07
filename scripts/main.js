@@ -5,17 +5,35 @@ const timeOfDay =
   ['Good morning', 'Good afternoon', 'Good evening', 'Good night'];
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Ensure offscreen document is ready first
-  chrome.runtime.sendMessage({ type: "ensure-offscreen" }, () => {
-    // Then send the audio control message
-    chrome.runtime.sendMessage({ type: "play-audio" }); // or "stop-audio"
-  });
+
+  // IF NEED TO CLEAR DATA 
+  // Clear data from chrome.storage.local
+  // chrome.storage.local.clear(function () {
+  //   if (chrome.runtime.lastError) {
+  //     console.error("Error clearing local storage: " + chrome.runtime.lastError.message);
+  //   } else {
+  //     console.log("Local storage cleared successfully.");
+  //   }
+  // });
+
+  // // Clear data from chrome.storage.sync
+  // chrome.storage.sync.clear(function () {
+  //   if (chrome.runtime.lastError) {
+  //     console.error("Error clearing sync storage: " + chrome.runtime.lastError.message);
+  //   } else {
+  //     console.log("Sync storage cleared successfully.");
+  //   }
+  // });
+  // localStorage.removeItem('selected-theme');
+  // console.log("Theme data cleared from localStorage.");
+
+  // END IF NEED TO CLEAR DATA
 
   const musicButton = document.getElementById('musicButton');
   const userTaskInfo = document.getElementById('userTaskInfo');
   const streakElement = document.getElementById('streak');
   const mostProductiveTaskElement = document.getElementById('mostProductiveTask');
-  
+
 
   let totalTasks = 0;
   let totalDays = 0;
@@ -26,25 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let mostProductiveTaskCount = 0;
   let mostProductiveTaskName = '';
 
-  // Music button setup
-  if (musicButton) {
-    chrome.runtime.sendMessage({ type: 'get-music-state' }, (response) => {
-      if (response && typeof response.playing !== 'undefined') {
-        isPlaying = response.playing;
-        musicButton.src = isPlaying ? mus1 : mus2;
-      } else {
-        isPlaying = false;
-        musicButton.src = mus2;
-      }
-    });
-
-    musicButton.addEventListener('click', () => {
-      isPlaying = !isPlaying;
-      musicButton.src = isPlaying ? mus1 : mus2;
-      chrome.runtime.sendMessage({ type: isPlaying ? 'play-audio' : 'stop-audio' });
-    });
-  }
-
+  
   // Load user name and tasks, then update DOM
   chrome.storage.local.get(['savedName', 'tasks', 'streak', 'mostProductiveTaskCount', 'mostProductiveTaskName'], (data) => {
     const name = data.savedName || 'User';
