@@ -17,12 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
     timersModalsButton.addEventListener('click', () => {
         //loadTimers();
         modal.classList.add('show');
-        timerModal.style.display = 'block';
+        timerModal.style.display = 'flex';
     });
     editNameModalButton.addEventListener('click', () => {
         //loadTimers();
         modal.classList.add('show');
-        editNameModal.style.display = 'block';
+        editNameModal.style.display = 'flex';
     });
 
     closeModalButton.addEventListener('click', () => {
