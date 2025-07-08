@@ -142,27 +142,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 '--ico-color': 'hue-rotate(0deg) saturate(0.5) brightness(1.1)',
             },
             ocean: {
-                '--button': '#007b8a',
-                '--button-hover': '#0097a7',
-                '--button-shadow': '#006064',
-                '--main-bg': '#e0f7fa',
-                '--container-bg': '#b2ebf2',
-                '--heading-big': '#004d40',
-                '--heading-small': '#00796b',
-                '--paragraph': '#336e6e',
-                '--hyperlink': '#00acc1',
-                '--hyperlink-hover': '#4dd0e1',
-                '--timer-text-color': '#003c3c',
-                '--input-box': '#a7ffeb',
-                '--input-box-hover': '#b9fff6',
-                '--task-card-bg': '#ccf2f4',
+                '--button': '#007b8a',              // deep sea teal
+                '--button-hover': '#00a0b0',        // lighter tropical blue
+                '--button-shadow': '#005f66',       // deeper ocean
+
+                '--main-bg': '#fef9f0',             // warm sand-tinted white
+                '--container-bg': '#e5f6f8',        // soft aqua with beach tint
+
+                '--heading-big': '#004d40',         // ocean navy green
+                '--heading-small': '#00796b',       // tropical surf green
+                '--paragraph': '#5b4736',           // driftwood brown
+                '--hyperlink': '#007b8a',           // ocean link
+                '--hyperlink-hover': '#00bdd6',     // wave shimmer
+
+                '--timer-text-color': '#004851',    // deep sea text
+
+                '--input-box': '#e2c79d',           // darker sandy tan
+                '--input-box-hover': '#f0d5aa',     // warm golden hover (lighter but still visible)
+
+                '--task-card-bg': '#e0f2f1',        // soft seafoam
+
                 '--font': 'Poppins',
-                '--level-1': '#a7ffeb',
-                '--level-2': '#4dd0e1',
-                '--level-3': '#00acc1',
-                '--level-4': '#006064',
-                '--ico-color': 'hue-rotate(170deg) saturate(1.5)',
+
+                '--level-1': '#fff7e6',             // light sand
+                '--level-2': '#ffe3b3',             // warm tan
+                '--level-3': '#00acc1',             // aqua blue
+                '--level-4': '#006064',             // deep ocean
+
+                '--ico-color': 'hue-rotate(170deg) saturate(1.3) brightness(1)',
             },
+
+
         };
 
         if (themeStyles[theme]) {
