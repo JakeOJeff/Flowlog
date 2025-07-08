@@ -48,9 +48,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const images = document.querySelectorAll('.iconICOButton');
 
   // Get the CSS variable from :root
-  const rootStyles = getComputedStyle(document.documentElement);
-  const filterValue = rootStyles.getPropertyValue('--ico-color').trim();
+  const filterValue = getComputedStyle(document.documentElement)
+    .getPropertyValue('--ico-color')
+    .trim();
 
+  // Apply the filter to all target images
   images.forEach(img => {
     img.style.filter = filterValue;
   });
