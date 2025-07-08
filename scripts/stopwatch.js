@@ -42,6 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function resetTimer() {
+        chrome.storage.local.get('timers', (data) => {
+            const timers = data.timers || [];
+            const tod = new Date().toISOString().split("T")[0];
+            
+            timers.push({date: tod, duration: elapsedTime});
+            chrome.storage.local.set({ timers}, () => {});
+        });
         clearInterval(timer);
         elapsedTime = 0;
         running = false;
@@ -49,6 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
         startBtn.style.display = '';
         resetBtn.style.display = 'none';
         saveState(); // save on reset
+
+
     }
 
 

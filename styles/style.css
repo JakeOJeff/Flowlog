@@ -48,7 +48,7 @@ h1 {
   font-family: var(--font), sans-serif;
   font-weight: 900;
   color: var(--heading-big);
-  font-size: 52px;
+  font-size: 48px;
   transition-duration: 0.5s;
   margin: 0
 }
@@ -58,7 +58,7 @@ h2 {
   font-family: var(--font), sans-serif;
   font-weight: 800;
   color: var(--heading-big);
-  font-size: 38px;
+  font-size: 34px;
   transition-duration: 0.5s;
   margin: 0
 }
@@ -104,9 +104,10 @@ a:hover {
 }
 
 select {
-  padding: 10px;
+  padding: 5px;
   border-radius: 6px;
   color: white;
+  
   font-family: var(--font), sans-serif;
   font-size: 16px;
   font-weight: 550;

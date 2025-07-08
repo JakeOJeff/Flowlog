@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const editNameText = document.getElementById('editNameText');
 
     timersModalsButton.addEventListener('click', () => {
-        //loadTimers();
+        loadTimers();
         modalOverlay.classList.add('show');
         modal.classList.add('show');
 
@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
         closeModal()
     });
 
-
-    window.addEventListener('click', (e) => {
+    modalOverlay.addEventListener('click', (e) => {
+        // Close the modal if the overlay is clicked
         if (e.target === modal) {
             closeModal()
         }
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             });
             editNameModal.style.display = 'none';
-            modal.classList.remove('show');
+            closeModal();
             editNameInput.value = ''; // Clear the input field
         }
     });
@@ -74,11 +74,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function addModel() {
-        modalOverlay.classList.add('show');
-        modal.classList.add('show');
-        innerDivs.forEach(div => {
-            div.style.display = "none";
+    function loadTimers() {
+        // Function to load timers from storage and display them in the modal
+        chrome.storage.local.get('timers', (data) => {
+            const timers = data.timers || [];
+            const timerList = document.getElementById('timerList');
+            timerList.innerHTML = ''; // Clear existing timers
+
+            if (timers.length === 0) {
+                timerList.innerHTML = '<p>No timers recorded yet.</p>';
+                return;
+            }
+
+            timers.forEach(timer => {
+                const timerItem = document.createElement('p');
+                timerItem.textContent = `${timer.date} - ${timer.duration} seconds`;
+                timerList.appendChild(timerItem);
+            });
         });
     }
 });
