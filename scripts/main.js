@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // IF NEED TO CLEAR DATA 
   // Clear data from chrome.storage.local
-  
+
   // chrome.storage.local.clear(function () {
   //   if (chrome.runtime.lastError) {
   //     console.error("Error clearing local storage: " + chrome.runtime.lastError.message);
@@ -45,7 +45,17 @@ document.addEventListener("DOMContentLoaded", function () {
   let mostProductiveTaskCount = 0;
   let mostProductiveTaskName = '';
 
-  
+  const images = document.querySelectorAll('.iconICOButton');
+
+  // Get the CSS variable from :root
+  const rootStyles = getComputedStyle(document.documentElement);
+  const filterValue = rootStyles.getPropertyValue('--ico-color').trim();
+
+  images.forEach(img => {
+    img.style.filter = filterValue;
+  });
+
+
   // Load user name and tasks, then update DOM
   chrome.storage.local.get(['savedName', 'tasks', 'streak', 'mostProductiveTaskCount', 'mostProductiveTaskName'], (data) => {
     const name = data.savedName || 'User';
