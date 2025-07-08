@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let timer;
     let startTime;
     let elapsedTime = 0;
+    let elapsingSeconds = 0;
     let running = false;
 
 
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateDisplay() {
         const t = elapsedTime + (running ? Date.now() - startTime : 0)
+        elapsingSeconds += t;
         const date = new Date(t);
         const hours = String(date.getUTCHours()).padStart(2, '0');
         const minutes = String(date.getUTCMinutes()).padStart(2, '0');
@@ -43,11 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function resetTimer() {
         chrome.storage.local.get('timers', (data) => {
+            const date = new Date(elapsingSeconds);
+            const hours = String(date.getUTCHours()).padStart(2, '0');
+            const minutes = String(date.getUTCMinutes()).padStart(2, '0');
+            const seconds = String(date.getUTCSeconds()).padStart(2, '0');
             const timers = data.timers || [];
             const tod = new Date().toISOString().split("T")[0];
-            
-            timers.push({date: tod, duration: elapsedTime});
-            chrome.storage.local.set({ timers}, () => {});
+
+            timers.push({ date: tod, duration: elapsingSeconds, time: `${hours}:${minutes}:${seconds}` });
+            chrome.storage.local.set({ timers }, () => { });
         });
         clearInterval(timer);
         elapsedTime = 0;
@@ -103,3 +109,4 @@ document.addEventListener('DOMContentLoaded', () => {
     restoreState();
 
 });
+

@@ -22,16 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     timersModalsButton.addEventListener('click', () => {
         loadTimers();
-        modalOverlay.classList.add('show');
-        modal.classList.add('show');
-
-        timerModal.style.display = 'flex';
+        openModal(timerModal)
+        
     });
     editNameModalButton.addEventListener('click', () => {
         //loadTimers();
-        modalOverlay.classList.add('show');
-        modal.classList.add('show');
-        editNameModal.style.display = 'flex';
+        openModal(editNameModal)
     });
 
     closeModalButton.addEventListener('click', () => {
@@ -74,11 +70,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function openModal(givenModal) {
+        modalOverlay.classList.add('show');
+        modal.classList.add('show');
+        givenModal.style.display = 'flex';
+        givenModal.querySelectorAll("div").forEach(div => {
+            div.style.display = "block";
+        });
+    }
+
     function loadTimers() {
+
         // Function to load timers from storage and display them in the modal
         chrome.storage.local.get('timers', (data) => {
             const timers = data.timers || [];
             const timerList = document.getElementById('timerList');
+
             timerList.innerHTML = ''; // Clear existing timers
 
             if (timers.length === 0) {
@@ -87,9 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             timers.forEach(timer => {
-                const timerItem = document.createElement('p');
-                timerItem.textContent = `${timer.date} - ${timer.duration} seconds`;
-                timerList.appendChild(timerItem);
+                if (timer.time !== undefined) {
+                    const timerItem = document.createElement('p');
+                    timerItem.textContent = `${timer.date} - ${timer.time}`
+                    timerList.appendChild(timerItem);
+                }
+
             });
         });
     }
