@@ -24,6 +24,7 @@
   --level-3: #de9490;
   --level-4: #e07872;
 
+  --ico-color: hue-rotate(325deg) saturate(1.5) brightness(1.1);
   /* Font */
   --font: 'Quicksand';
 

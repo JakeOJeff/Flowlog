@@ -45,17 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let mostProductiveTaskCount = 0;
   let mostProductiveTaskName = '';
 
-  const images = document.querySelectorAll('.iconICOButton');
-
-  // Get the CSS variable from :root
-  const filterValue = getComputedStyle(document.documentElement)
-    .getPropertyValue('--ico-color')
-    .trim();
-
-  // Apply the filter to all target images
-  images.forEach(img => {
-    img.style.filter = filterValue;
-  });
 
 
   // Load user name and tasks, then update DOM
