@@ -4,6 +4,7 @@
     padding: 20px;
     display: flex;
     height: 40px;
+    justify-content: center;
 }
 
 /* Style the buttons that are used to open the tab content */
