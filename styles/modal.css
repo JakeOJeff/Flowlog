@@ -58,7 +58,8 @@
 }
 
 .modal .close-button:hover {
-  background-color: var(--button-hover-bg);
+  background-color: var(--container-bg);
+   box-shadow: 0 2px 8px var(--main-bg);
 }
 
 .timerModal {
@@ -79,7 +80,14 @@
 .timer-list p {
   font-size: 20px;
 }
+.timer-list::-webkit-scrollbar {
+  width: 6px;
+}
 
+.timer-list::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 20px;
+}
 .editNameModal {
   display: none;
   justify-content: center;

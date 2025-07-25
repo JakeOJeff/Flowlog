@@ -23,7 +23,7 @@
     <div>
         <div class="tab">
             <button class="tablinks" id="flow">Flow</button>
-            <button class="tablinks" id="mood">Mood</button>
+            <!-- <button class="tablinks" id="mood">Mood</button> -->
             <button class="tablinks" id="log">Log</button>
             <button class="tablinks" id="profile">Profile</button>
         </div>
@@ -39,7 +39,7 @@
                     <h3 style="margin-top: 5px;">Past Timers</h3>
                     <div style="margin-top: 15px;" id="timerList" class="timer-list">
                         <!-- Timers will be dynamically loaded here -->
-                        
+
                     </div>
 
                 </div>
@@ -69,20 +69,16 @@
                         </div>
                     </div>
 
-                    <button class="viewMoreItemsButton" id="viewMoreItems"><span>View Past
-                            Timers</span></button>
-
-
-
+                    <button class="viewMoreItemsButton" id="viewMoreItems"><span>View Past Timers</span></button>
             </div>
         </div>
-        
-        <div id="Mood" class="tabcontent">
+
+        <!-- <div id="Mood" class="tabcontent">
             <div class="main">
                 <h2>Mood</h2>
                 <p>Mood Table Coming Soon!</p>
             </div>
-        </div>
+        </div> -->
 
         <div id="Log" class="tabcontent">
             <div class="main">
@@ -100,9 +96,8 @@
         <div id="Profile" class="tabcontent">
             <div class="main">
                 <h2>Profile</h2>
-                <h3>-: User Information :-</h3>
-                <p id="userTaskInfo"> --: Name Loading error :--</p>
-                <h3>-: Statistics :-</h3>
+                <h3>-: User Statistics :-</h3>
+                <p id="userTaskInfo" style="margin: 5px;"> --: Name Loading error :--</p>
                 <div class="grid" id="grid"></div>
                 <span class="stats-tooltip">Hover over a box to see the task count</span>
 
@@ -112,7 +107,8 @@
                 <h3>-: User Settings and Preferences :-</h3>
 
 
-                <div style="display: flex; flex-direction: column; justify-content: center; align-content: space-between;">
+                <div
+                    style="display: flex; flex-direction: column; justify-content: center; align-content: space-between;">
                     <div style="display: flex; align-items: center; margin-bottom: 5px; ">
                         <p>Preferred Theme : </p>
 
@@ -127,8 +123,8 @@
                         </select>
                     </div>
                     <div style="display: flex; align-items: center;">
-                        <p id="editNameText">Name : </p><img class="iconICOButton"
-                            style="background-color: var(--input-box); padding: 4px; margin-left: 16px; width: 18px; height: 18px;"
+                        <p id="editNameText">Name : </p><img class="iconICOButton inputICOButton"
+                            style="padding: 4px; margin-left: 16px; width: 18px; height: 18px;"
                             id="editNameButton" src="/assets/imgs/edit.png" style="box-shadow: 2px;">
                     </div>
                 </div>

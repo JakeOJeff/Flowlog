@@ -25,12 +25,12 @@ function openTab(evt, tabName) {
 document.addEventListener("DOMContentLoaded", () => {
     // Get all elements with class="tablinks" and add click event listener
     const flowButton = document.getElementById("flow");
-    const moodButton = document.getElementById("mood");
+    // const moodButton = document.getElementById("mood");
     const logButton = document.getElementById("log");
     const profileButton = document.getElementById("profile");
 
     flowButton.addEventListener("click", (evt) => openTab(evt, "Flow"));
-    moodButton.addEventListener("click", (evt) => openTab(evt, "Mood"));
+    // moodButton.addEventListener("click", (evt) => openTab(evt, "Mood"));
     logButton.addEventListener("click", (evt) => openTab(evt, "Log"));
     profileButton.addEventListener("click", (evt) => openTab(evt, "Profile"));
     // Open the default tab

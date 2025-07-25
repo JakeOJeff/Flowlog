@@ -24,6 +24,16 @@
     cursor: pointer;
 }
 
+.inputICOButton {
+    background-color: var(--input-box);
+}
+
+.inputICOButton:hover {
+    background-color: var(--input-box-hover);
+    box-shadow: 0 2px 8px var(--input-box-hover);
+    cursor: pointer;
+}
+
 .viewMoreItemsButton {
     border-radius: 10px;
     background-color: var(--button);

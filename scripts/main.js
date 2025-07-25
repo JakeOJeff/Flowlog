@@ -9,24 +9,24 @@ document.addEventListener("DOMContentLoaded", function () {
   // IF NEED TO CLEAR DATA 
   // Clear data from chrome.storage.local
 
-  // chrome.storage.local.clear(function () {
-  //   if (chrome.runtime.lastError) {
-  //     console.error("Error clearing local storage: " + chrome.runtime.lastError.message);
-  //   } else {
-  //     console.log("Local storage cleared successfully.");
-  //   }
-  // });
+  chrome.storage.local.clear(function () {
+    if (chrome.runtime.lastError) {
+      console.error("Error clearing local storage: " + chrome.runtime.lastError.message);
+    } else {
+      console.log("Local storage cleared successfully.");
+    }
+  });
 
-  // // Clear data from chrome.storage.sync
-  // chrome.storage.sync.clear(function () {
-  //   if (chrome.runtime.lastError) {
-  //     console.error("Error clearing sync storage: " + chrome.runtime.lastError.message);
-  //   } else {
-  //     console.log("Sync storage cleared successfully.");
-  //   }
-  // });
-  // localStorage.removeItem('selected-theme');
-  // console.log("Theme data cleared from localStorage.");
+  // Clear data from chrome.storage.sync
+  chrome.storage.sync.clear(function () {
+    if (chrome.runtime.lastError) {
+      console.error("Error clearing sync storage: " + chrome.runtime.lastError.message);
+    } else {
+      console.log("Sync storage cleared successfully.");
+    }
+  });
+  localStorage.removeItem('selected-theme');
+  console.log("Theme data cleared from localStorage.");
 
   // END IF NEED TO CLEAR DATA
 

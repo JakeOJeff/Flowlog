@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 '--paragraph': '#8b6044',
                 '--hyperlink': '#a56742',
                 '--hyperlink-hover': '#c98d64',
-                '--timer-text-color': '#7a3f26',
+                '--timer-text-color': '#9a5920',
                 '--input-box': '#ddb280',
                 '--input-box-hover': '#f2c397',
                 '--task-card-bg': '#f3d6b2',
