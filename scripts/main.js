@@ -39,12 +39,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let totalTasks = 0;
   let totalDays = 0;
   let buildUserData = '';
-  let isPlaying = false;
   let streak = 0;
   let currentStreak = 0;
   let mostProductiveTaskCount = 0;
   let mostProductiveTaskName = '';
-
 
 
   // Load user name and tasks, then update DOM
