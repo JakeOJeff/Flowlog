@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // END IF NEED TO CLEAR DATA
 
-  const musicButton = document.getElementById('musicButton');
   const userTaskInfo = document.getElementById('userTaskInfo');
   const streakElement = document.getElementById('streak');
   const mostProductiveTaskElement = document.getElementById('mostProductiveTask');
@@ -44,7 +43,27 @@ document.addEventListener("DOMContentLoaded", function () {
   let mostProductiveTaskCount = 0;
   let mostProductiveTaskName = '';
 
+  document.getElementById("copyMeta").addEventListener("click", (e) => {
+    e.preventDefault();
 
+    chrome.storage.local.get(null, (items) => {
+      console.log("Items in storage before copying:", items); // Debug
+
+      const jsonString = JSON.stringify(items, null, 2);
+
+      if (!jsonString || jsonString === "{}") {
+        alert("No metadata found in storage!");
+        return;
+      }
+
+      navigator.clipboard.writeText(jsonString).then(() => {
+        alert("Metadata copied to clipboard!");
+      }).catch(err => {
+        console.error("Failed to copy: ", err);
+        alert("Could not copy metadata.");
+      });
+    });
+  });
   // Load user name and tasks, then update DOM
   chrome.storage.local.get(['savedName', 'tasks', 'streak', 'mostProductiveTaskCount', 'mostProductiveTaskName'], (data) => {
     const name = data.savedName || 'User';
