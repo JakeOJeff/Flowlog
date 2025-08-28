@@ -22,16 +22,6 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
-function currentTab() {
-    var tablinks = document.getElementsByClassName("tablinks");
-
-    for (i = 0; i < tablinks.length; i++) {
-        if (tablinks[i].className.includes(" active")) {
-            return tablinks[i].id;
-        }
-    }
-    return null;
-}
 
 document.addEventListener("DOMContentLoaded", () => {
     // Get all elements with class="tablinks" and add click event listener
@@ -39,14 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // const moodButton = document.getElementById("mood");
     const logButton = document.getElementById("log");
     const profileButton = document.getElementById("profile");
-    const copyButton = document.getElementById("copyMeta");
-    console.log(currentTab())
-    if (currentTab() == "Log") {
-        copyButton.style.display = "none";
-    }
-    else {
-        copyButton.style.display = "block";
-    }
+
 
     flowButton.addEventListener("click", (evt) => openTab(evt, "Flow"));
     // moodButton.addEventListener("click", (evt) => openTab(evt, "Mood"));
